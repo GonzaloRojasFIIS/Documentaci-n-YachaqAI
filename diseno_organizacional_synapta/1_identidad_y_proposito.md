@@ -2,6 +2,24 @@
 
 > **Validación Cap. 2 (Pérez Ríos/Beer):** Esta fase corresponde al Paso 1 del método de diagnóstico/diseño del MSV. Su objetivo es responder *qué es* la organización, *para qué existe* y *dónde terminan sus límites*, antes de poder analizar su estructura interna. Sin este paso, todo diseño posterior carece de ancla metodológica.
 
+
+## Tabla de Contenidos
+
+- [1. Declaración de Identidad, Propósito y Límites (Boundaries)](#1-declaracion-de-identidad-proposito-y-limites-boundaries)
+  - [1.1 Qué ES y Qué HACE Synapta](#11-que-es-y-que-hace-synapta)
+  - [1.2 Qué NO ES y Qué NO HACE Synapta](#12-que-no-es-y-que-no-hace-synapta)
+  - [1.3 Demarcación de Límites (Boundaries)](#13-demarcacion-de-limites-boundaries)
+- [2. Responsables por Área Funcional](#2-responsables-por-area-funcional)
+- [3. Análisis de Áreas Fundamentales del Entorno: Matriz Presente vs. Futuro](#3-analisis-de-areas-fundamentales-del-entorno-matriz-presente-vs-futuro)
+- [4. Configuración de la Captura de Información: Sensores, Fuentes y Canales](#4-configuracion-de-la-captura-de-informacion-sensores-fuentes-y-canales)
+- [5. Sala de Operaciones (Operations Room) y Canal Algedónico](#5-sala-de-operaciones-operations-room-y-canal-algedonico)
+  - [5.1 La Sala de Operaciones (Operations Room)](#51-la-sala-de-operaciones-operations-room)
+  - [5.2 El Canal Algedónico (Algedonic Loop)](#52-el-canal-algedonico-algedonic-loop)
+  - [5.3 Diagnóstico y Prevención de Patologías en la Fase 1](#53-diagnostico-y-prevencion-de-patologias-en-la-fase-1)
+- [Fuentes Citadas](#fuentes-citadas)
+
+---
+
 ---
 
 ## 1. Declaración de Identidad, Propósito y Límites (Boundaries)
@@ -44,19 +62,19 @@ La frontera del sistema determina qué está dentro (bajo el control de Synapta)
 
 Siguiendo la metodología del Cap. 2, cada área funcional que interactúa con el entorno debe tener un responsable explícito que actúe como "transductor" entre la variedad externa y la respuesta organizacional:
 
-| Área Funcional | Responsable (Rol) | Sistema MSV al que pertenece |
-| :--- | :--- | :--- |
-| **Legal y Cumplimiento** | Asesor Legal externo + CEO para decisiones vinculantes | Sistema 5 (política) + Sistema 3 (control) |
-| **Contabilidad y Finanzas** | CFO / Director Financiero | Sistema 3 (control de recursos) |
-| **Presupuesto de APIs y Nube** | CTO + Head of Engineering | Sistema 3 y Sistema 1.1 (Ingeniería) |
-| **Recursos Humanos** | Head of People (RRHH) | Sistema 3 (operativo) |
-| **Desarrollo de Producto** | CTO + Equipo de Ingeniería | Sistema 1.1 (Ingeniería y Producto) |
-| **Marketing Digital (B2C)** | Head of Growth / CMO | Sistema 1.2 (Crecimiento y Ventas) |
-| **Ventas Institucionales (B2B)** | Head of Sales / Ejecutivos de Cuenta | Sistema 1.2 (Crecimiento y Ventas) |
-| **Soporte al Cliente** | Head of Customer Success | Sistema 1.3 (Experiencia e Infraestructura) |
-| **Infraestructura y DevOps** | Head of Infrastructure / DevOps Lead | Sistema 1.3 (Experiencia e Infraestructura) |
-| **Estrategia e I+D** | CEO + CTO | Sistema 4 (Inteligencia estratégica) |
-| **Identidad y Ética Corporativa** | Junta de Fundadores | Sistema 5 (Política) |
+| Área Funcional                    | Responsable (Rol)                                      | Sistema MSV al que pertenece                |
+| :-------------------------------- | :----------------------------------------------------- | :------------------------------------------ |
+| **Legal y Cumplimiento**          | Asesor Legal externo + CEO para decisiones vinculantes | Sistema 5 (política) + Sistema 3 (control)  |
+| **Contabilidad y Finanzas**       | CFO / Director Financiero                              | Sistema 3 (control de recursos)             |
+| **Presupuesto de APIs y Nube**    | CTO + Head of Engineering                              | Sistema 3 y Sistema 1.1 (Ingeniería)        |
+| **Recursos Humanos**              | Head of People (RRHH)                                  | Sistema 3 (operativo)                       |
+| **Desarrollo de Producto**        | CTO + Equipo de Ingeniería                             | Sistema 1.1 (Ingeniería y Producto)         |
+| **Marketing Digital (B2C)**       | Head of Growth / CMO                                   | Sistema 1.2 (Crecimiento B2C)              |
+| **Ventas Institucionales (B2B)**  | Head of Sales / Ejecutivos de Cuenta                   | Sistema 1.3 (Ventas B2B)                    |
+| **Soporte al Cliente**            | Head of Customer Success                               | Sistema 1.4 (Soporte e Infraestructura)     |
+| **Infraestructura y DevOps**      | Head of Infrastructure / DevOps Lead                   | Sistema 1.4 (Soporte e Infraestructura)     |
+| **Estrategia e I+D**              | CEO + CTO                                              | Sistema 4 (Inteligencia estratégica)        |
+| **Identidad y Ética Corporativa** | Junta de Fundadores                                    | Sistema 5 (Política)                        |
 
 ---
 
@@ -76,7 +94,7 @@ El entorno de Synapta es altamente complejo. El Cap. 2 exige analizar al menos 1
 | **Competidores** | Head of Growth + CTO | Anki (curva de aprendizaje alta), Notion AI (sin SRS), RemNote (nicho anglosajón). | Asistentes cognitivos nativos en navegadores y sistemas operativos (Microsoft Copilot, Google NotebookLM). |
 | **Tecnológica** | CTO | Madurez en embeddings semánticos (`text-embedding-004`) y parsers estructurados (LlamaParse). | Agentes autónomos multi-paso y grafos vectoriales en memoria con auto-actualización. |
 | **Ecológica** | CFO + CTO | Consumo energético de centros de datos para consultas RAG. | Regulación de eficiencia energética en cómputo (computación verde). |
-| **Educativa** | Head of Customer Success | Cualquier aprendiz intensivo (universitarios, profesionales en formación continua, investigadores) enfrenta baja retención activa: la Curva de Ebbinghaus muestra que sin repaso activo se pierde el 70% del contenido nuevo en 24 horas. | Estándar de "Aprendizaje Activo" adoptado tanto en curricula universitaria como en programas de desarrollo profesional continuo en Perú. |
+| **Educativa** | Head of Customer Success | Cualquier aprendiz intensivo (universitarios, profesionales en formación continua, investigadores) enfrenta baja retención activa: la Curva de Ebbinghaus muestra que sin repaso activo se pierde el 70% del contenido nuevo en 24 horas [6]. | Estándar de "Aprendizaje Activo" adoptado tanto en curricula universitaria como en programas de desarrollo profesional continuo en Perú. |
 | **Demográfica** | Head of Growth | Más de **1.2 millones de estudiantes matriculados** en universidades peruanas licenciadas *(SUNEDU SIU, 2023/2024)* [4]; la población de educación superior en el Perú es el mercado foco inicial. | Incremento de adultos mayores de 35 años que cursan posgrados y requieren herramientas de alta densidad de conocimiento. |
 
 ---
@@ -108,8 +126,8 @@ graph LR
 
     S1 -->|Transductor Técnico| Sys4["S4: Estrategia/CTO"]
     S2 -->|Reporte de impacto técnico-legal| Sys3["S3: Control/CEO"]
-    S3 -->|KPIs: CAC, MRR, Churn| Sys12["S1.2: Ventas"]
-    S4 -->|Índice retentiva + Churn Rate| Sys13["S1.3: Soporte"]
+    S3 -->|KPIs: CAC, MRR, Churn| Sys12["S1.2: Growth / S1.3: Ventas B2B"]
+    S4 -->|Índice retentiva + Churn Rate| Sys14["S1.4: Soporte"]
 ```
 
 | Sensor | Responsable | Fuente | Frecuencia | Canal y Transducción |
@@ -121,15 +139,32 @@ graph LR
 
 ---
 
-## 5. Visualización: El Dashboard Algedónico (Operations Room)
+## 5. Sala de Operaciones (Operations Room) y Canal Algedónico
 
-Basado en el concepto de *Operations Room* de Beer (Proyecto Cybersyn), el dashboard de Synapta presenta la información del entorno de forma que reduzca la variedad a señales accionables:
+Siguiendo las directrices del libro de José Pérez Ríos, la Sala de Operaciones y el Canal Algedónico son dos componentes cibernéticos distintos pero estrechamente interrelacionados:
 
-- **Panel 1 – Telemetría de YachaqAI:** Grafo semáforo de retentiva promedio de usuarios, tasa de error del parser y latencia RAG.
-- **Panel 2 – Salud de Mercado:** CAC vs. presupuesto, MRR, churn rate semanal.
-- **Panel 3 – Entorno Futuro (S4):** Simulaciones de escenarios críticos (e.g., adopción masiva por una universidad de 10,000 estudiantes; colapso del proveedor de API principal).
+### 5.1 La Sala de Operaciones (Operations Room)
+Es el entorno virtual de toma de decisiones (un *decision environment* en Notion y Google Sheets) diseñado para asistir a todo el **Metasistema (Sistemas 3, 4 y 5)**. Su propósito es reducir la variedad de datos brutos a información accionable sobre tres horizontes temporales:
+*   **El Pasado y Presente (Sistema 3):** Monitorea las operaciones en tiempo real para optimizar el "aquí y ahora". Se nutre de los Paneles 1 y 2 para regular la cohesión y las sinergias internas de las unidades de Nivel 1.
+*   **El Futuro (Sistema 4):** Monitorea el "afuera y el mañana" mediante el Panel 3. Integra los **modelos de simulación dinámica (M1, M2 y M3)** para proyectar escenarios de escalabilidad, costos de APIs y disponibilidad del equipo.
+*   **La Coherencia de Políticas (Sistema 5):** Provee al Consejo Directivo una imagen unificada de la salud de la organización, permitiéndole evaluar si el comportamiento sistémico se alinea con el *ethos* y propósito declarados.
 
-Responsable del mantenimiento del dashboard: **Head of Infrastructure + Head of Growth** (en coordinación con S3).
+### 5.2 El Canal Algedónico (Algedonic Loop)
+Es un canal de información de emergencia que **discurre en paralelo a los canales de reporte ordinarios** (C3 y C4). Su única función es transmitir señales de dolor (amenazas críticas a la viabilidad) o placer (oportunidades extraordinarias) de forma inmediata.
+*   **Flujo cibernético:** La alerta se origina en los sensores de la operación (S1). Sube al director local y al **Sistema 3** (CEO/COO), que tiene un plazo acotado de reacción (ej. 15 minutos en caídas técnicas). Si el S3 no puede solucionar la anomalía, la señal pasa por el **Sistema 4** y **despierta de inmediato al Sistema 5** (Junta de Fundadores) para activar los **protocolos de emergencia pre-diseñados**.
+*   **Integración visual:** El Canal Algedónico se integra en la Sala de Operaciones mediante un sistema semáforo (Verde 🟢 = Operación normal; Ámbar 🟡 = Warning; Rojo 🔴 = Alarma Algedónica crítica bypass a S5).
+
+| Panel en Sala de Operaciones | Sistema Metasistémico | Variables Monitoreadas | Sensor / Origen de Alerta | Gatillo Algedónico Crítico (🔴 Bypass a S5) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Panel 1 – Telemetría de YachaqAI** | **S3** (Presente) | Retentiva promedio de usuarios, tasa de error de LlamaParse y latencia RAG. | Base de datos de producción (telemetría automática) | Tasa de error del parser > 30% sostenida por 1 hora, latencia RAG > 10 segundos por > 30 minutos, o consumo acumulado de cuota de APIs de IA > 85% antes del día 20 del mes. |
+| **Panel 2 – Salud de Mercado** | **S3** (Presente) | CAC vs. Presupuesto, MRR y Churn rate semanal. | CRM de Ventas y Google Analytics | Caída de 50%+ de Usuarios Activos Semanales (WAU) en una sola semana. |
+| **Panel 3 – Entorno Futuro** | **S4** (Futuro) | Modelos de Simulación de Entorno (M2, M5), papers arXiv y movimientos de competidores. | Google Alerts, feeds arXiv e insumos del CTO/Sales | *No genera alertas algedónicas operativas* (alimenta el plan estratégico y el Homeostato S4-S3). |
+
+### 5.3 Diagnóstico y Prevención de Patologías en la Fase 1
+*   **Prevención de la Esquizofrenia Institucional:** Esta patología funcional (síntoma del "no sé quién soy" o colisiones de identidad) se evita en Synapta porque la definición de lo que *ES* y lo que *NO ES* (§1.1, §1.2) y sus límites (§1.3) han sido formalmente declarados por el S5. El S4 (a través de telemetría y encuestas de usuarios) monitorea si el entorno percibe a Synapta de acuerdo con esta identidad, permitiendo al S5 recalibrar las políticas antes de que surja una divergencia identitaria.
+*   **Prevención del Bloqueo del Canal Algedónico:** Se evita al formalizar las alertas semáforo y automatizar los sensores técnicos (Sentry, UptimeRobot). Además, se dota al S5 de protocolos de emergencia pre-diseñados listos para ejecutar (§4.2 en `4_coherencia_y_control.md`), ya que en crisis de viabilidad el metasistema no debe perder tiempo improvisando alternativas.
+
+**Responsable de la Sala de Operaciones:** El **CEO / COO (S3)** es el administrador primario. Los directores locales son los encargados de proveer los flujos de datos sin alteración; que un director "filtre" o "maquille" los datos de su Panel antes de que el S3 pueda leerlos constituiría la patología de *filtrado o distorsión de información* que este diseño elimina de raíz.
 
 ---
 
@@ -142,3 +177,4 @@ Responsable del mantenimiento del dashboard: **Head of Infrastructure + Head of 
 | [3] | SUNEDU (2026). *Listado de universidades con licencia institucional vigente* | 105 universidades licenciadas en Perú |
 | [4] | SUNEDU – Sistema de Información Universitaria (2023/2024) | ~1.2 millones de estudiantes matriculados en universidades peruanas licenciadas |
 | [5] | Banco Mundial (2021). *Educación superior en América Latina y el Caribe* | >30 millones de estudiantes en educación superior en LATAM |
+| [6] | Ebbinghaus, Hermann (1885). *Memory: A Contribution to Experimental Psychology* | Pérdida de aproximadamente el 70% de información nueva sin repaso activo dentro de las primeras 24 horas (Curva del Olvido) |
