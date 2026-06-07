@@ -129,89 +129,183 @@ El Cap. 2 establece que los S5 de distintos niveles forman una **cadena de trans
 ### Relación entre los Sistemas 4 de Diferentes Niveles
 El Cap. 2 establece que los S4 de distintos niveles deben estar **explícitamente conectados** para evitar estrategias contradictorias:
 - El S4 de Ingeniería (Nivel 1.1) planifica adoptar modelos locales de lenguaje (SLMs). Ese plan afecta los costos de API y el presupuesto de Ventas (Nivel 1.2).
-- El S4 de Ventas planifica ofrecer un tier de precio "on-premise" a universidades. Eso afecta la arquitectura que Ingeniería debe desarrollar.
+- El S4 de Ventas planifica ofrecer un tier de precio "on-premise" a universidades. Eso afecta la estructura que Ingeniería debe desarrollar.
 - **Mecanismo de coherencia:** Reuniones mensuales del *comité tecnológico-comercial* (CTO + Head of Sales + CFO) donde los S4 de cada unidad presentan sus planes de adaptación y se verifica compatibilidad cruzada. Los outputs del modelo financiero de Ingeniería (costos de API por usuario) sirven como *inputs* del modelo de pricing de Ventas — implementando el principio de *modelos de Dinámica de Sistemas anidados* descrito en el Cap. 2.
 
 ---
 
-## 3. Sistema 3: Control e Integración (El Aquí y Ahora)
+### Modelos de Simulación para el S4 (M7)
+El metasistema cuenta con tres modelos cuantitativos desarrollados en Google Sheets para simular escenarios y evitar la toma de decisiones improvisada durante crisis.
 
-> **Cap. 2:** S3 es responsable del presente. Optimiza el funcionamiento conjunto del Sistema 1 buscando sinergias. No interviene autoritariamente en las operaciones diarias — su estilo debe respetar la autonomía de las unidades, interviniendo solo en excepciones.
+#### Modelo M1 — Agotamiento del Presupuesto de APIs
+- **Propósito:** Prevenir la interrupción del servicio por agotamiento de saldo en las APIs de LLMs (el único costo variable directo).
+- **Variables de Entrada:**
+  - Presupuesto mensual total: `S/. 100` (referencial, se ajusta según saldo real).
+  - Costo por sesión de consulta RAG: `USD 0.004` (basado en el costo oficial de Google Gemini 1.5 Flash: USD 0.075/M tokens de entrada + USD 0.30/M tokens de salida; con factor 10x para margen de ineficiencia y reintentos).
+  - Usuarios Activos Mensuales (MAU): `80` (meta base del proyecto).
+  - Sesiones RAG por usuario/mes: `12` (3 repeticiones/semana).
+  - Tipo de cambio USD/PEN: `3.75` (calibrado mensualmente).
+- **Variables de Salida:** Gasto mensual estimado (MAU × sesiones × costo/sesión × TC), número máximo de usuarios sostenibles y proyección de meses de viabilidad financiera.
+- **Responsable:** CTO (construcción inicial y actualización mensual en los primeros tres días del mes con facturación real).
+- **Ubicación:** Google Drive compartido (`M1_presupuesto_apis_[mes_año].gsheet`).
 
-**Existencia:** Representado por el **CEO / COO** (Dirección de Operaciones).
+#### Modelo M2 — Impacto de Perder el Piloto Institucional
+- **Propósito:** Modelar el impacto de la pérdida del docente patrocinador sobre la captación y validación del producto.
+- **Variables de Entrada:**
+  - % de usuarios activos por recomendación directa del docente: `30%` (obtenido del onboarding de la app).
+  - Tasa de retención de esos usuarios si el docente abandona: `50%` (adherencia intrínseca estimada).
+  - Semanas para conseguir un nuevo piloto con otro docente: `8 semanas` (2 semanas de contacto, 2 de exploración, 4 de prueba informal).
+- **Variables de Salida:** Caída proyectada de WAU el mes posterior, tiempo estimado para recuperar la base mediante difusión orgánica, y número de canales B2C adicionales requeridos.
+- **Responsable:** Head of Sales + CEO.
 
-**Calidad:** KPIs consolidados de las tres unidades, control presupuestal de APIs y pauta, asignación de headcount por unidad.
+#### Modelo M3 — Disponibilidad del Equipo durante Exámenes
+- **Propósito:** Anticipar cuellos de botella de entrega debido a las semanas de exámenes parciales y finales.
+- **Variables de Entrada:**
+  - Semanas de exámenes identificadas: `Semanas 8 y 16` del ciclo universitario peruano.
+  - Disponibilidad de cada integrante en exámenes: `5 horas/semana` (declarado por cada miembro).
+  - Tareas críticas no pausables: Uptime de infraestructura y soporte al piloto institucional.
+- **Variables de Salida:** Backlog de tareas a adelantar antes del período, tareas postergables, y borrador de aviso preventivo de soporte para los usuarios.
+- **Responsable:** CEO.
 
-**Desempeño:** Interviene solo cuando un indicador algedónico se activa (uptime < 99.5%, costos de API superan el 25% del presupuesto, o ventas caen más del 20% en un mes). La intervención rutinaria en sprints de ingeniería o en campañas de marketing es una patología organizacional.
-
-**Responsables:**
-
-| Función | Responsable |
-| :--- | :--- |
-| Integración y coordinación de las tres unidades | CEO / COO |
-| Control de presupuesto global | CFO |
-| Asignación de recursos humanos | Head of People (RRHH) |
-| Reporte a inversores | CEO + CFO |
-| Resolución de conflictos inter-unidades | CEO/COO (mediador de último recurso) |
-
-**Relación con otros sistemas:**
-- **→ S1 (C3):** Envía instrucciones y directrices de alto nivel (no microgestión) a los directores locales de cada unidad.
-- **↔ S1 (C4):** Negocia recursos (presupuesto, personas, licencias de API) y recibe la rendición de cuentas periódica.
-- **← S3* (C6):** Recibe resultados de auditorías esporádicas para validar que los reportes del S1 sean verídicos.
-- **↔ S4 (Homeostato):** Informa a S4 sobre qué cambios estratégicos son factibles dado el estado operativo actual.
+**Criterios de Calidad de los Modelos:** Se consideran operativos únicamente si: (1) tienen variables por defecto basadas en la realidad operativa del proyecto (no datos ficticios), (2) han sido ejecutados y validados, y (3) contienen una sección de "Decisiones pre-diseñadas" que guía la acción directa del equipo en caso de desviación.
 
 ---
 
-## 4. Sistema 3*: Auditoría y Monitoreo
+## 3. Sistema 3: Control y Cohesión (El Aquí y Ahora)
 
-> **Cap. 2:** S3* provee información esporádica y directa desde las operaciones, evitando los filtros formales. No es rutinario ni autoritario — su uso excesivo destruiría la confianza y autonomía del S1.
+> **Cap. 2:** S3 es responsable del presente de la organización. Optimiza la operación conjunta del Sistema 1 buscando sinergias y distribuyendo recursos de manera justa. No interviene de forma autoritaria en la gestión local diaria de las unidades — respeta al máximo la autonomía del S1 e interviene únicamente ante excepciones algedónicas.
 
-**Existencia:** Representado por **auditorías de código cruzadas** (code reviews entre ingenieros de diferentes áreas), **NPS aleatorios** a usuarios finales y **revisiones financieras esporádicas** por el CFO.
+**Existencia:** Representado por el **CEO / COO** (Dirección de Operaciones).
 
-**Calidad:** Ejecutado con herramientas de análisis estático (SonarQube), sesiones de *customer shadowing* (observar en vivo el onboarding de un estudiante) y revisiones de contratos B2B.
+**Calidad:** Cuenta con cuadros de mando semanales específicos por unidad, control financiero centralizado del presupuesto de APIs y pauta publicitaria, y canal formal C4 para negociación de recursos.
 
-**Desempeño:** Activado de forma aleatoria (máximo una vez al mes por unidad) para garantizar que las métricas reportadas formalmente por S1 coincidan con la realidad.
+**Desempeño:** Administra la viabilidad del día a día. S3 interviene en las operaciones solo cuando se activan los niveles Amarillo o Rojo del canal algedónico (e.g., uptime < 99%, bugs críticos > 3 en producción). Su patología común es la microgestión, la cual destruye la confianza y la autonomía del S1.
 
 **Responsables:**
 
 | Función | Responsable |
 | :--- | :--- |
-| Auditorías técnicas de código | CTO (cruzado entre ingenieros) |
-| Auditorías financieras | CFO + Auditor externo anual |
-| Encuestas NPS / Customer shadowing | Head of Customer Success |
-| Revisión de contratos B2B | Asesor Legal + Head of Sales |
+| Sinergia, cohesión y dirección operativa global | CEO / COO |
+| Distribución y control del presupuesto del proyecto | CFO |
+| Asignación y monitoreo de la carga horaria del equipo | Head of People (RRHH) |
+| Reporte de avance y viabilidad a la Junta de Fundadores | CEO |
+| Arbitraje y resolución de conflictos inter-unidades | CEO (como mediador de último recurso) |
+
+**Relación con otros sistemas:**
+- **→ S1 (C3):** Envía directrices generales y políticas globales (no instrucciones operativas detalladas).
+- **↔ S1 (C4):** Canal de negociación de recursos (tiempo, herramientas, cuotas de API) y rendición de cuentas de KPIs.
+- **← S3* (C6):** Encarga investigaciones o recibe auditorías directas para validar la veracidad de los reportes del S1.
+- **↔ S4 (Homeostato):** Alimenta la planificación estratégica con las capacidades reales de la operación actual.
+
+---
+
+### Sesión de Adaptación Estratégica (SAS) (M6)
+Para asegurar el equilibrio dinámico entre la política (S5), la inteligencia (S4) y el control operativo (S3), se formaliza la **Sesión de Adaptación Estratégica (SAS)**:
+
+- **Frecuencia:** Mensual, fijada para el primer viernes de cada mes (evita picos de entrega académica y exámenes).
+- **Duración:** `90 minutos`.
+- **Participantes:** Todo el equipo (al ser un equipo de 2-5 integrantes, la separación de roles es funcional y requiere participación colectiva).
+- **Medios:** Reunión por Google Meet con acta interactiva redactada en Notion en tiempo real.
+- **Preparación Previa:** Cada responsable de unidad actualiza su cuadro de mando semanal el jueves anterior antes de las 10pm. El CEO consolida los datos en un resumen ejecutivo que se comparte el jueves a las 11pm.
+
+#### Agenda Estándar de 90 Minutos:
+1. **BLOQUE 1 — Estado Actual [20 min] (CEO):** Desempeño operativo (cuadros de mando), resolución de conflictos del S2, hallazgos de auditorías S3* y estado del presupuesto de APIs.
+2. **BLOQUE 2 — Señales del Entorno [20 min] (CTO + Head of Sales):** Cambios en APIs y tecnologías de IA, análisis de competidores (ej. NotebookLM) y variaciones en el entorno universitario peruano.
+3. **BLOQUE 3 — Tensión Presente vs. Futuro [20 min] (Todos):** Ajustes tácticos deseados frente a la capacidad real permitida por el calendario académico.
+4. **BLOQUE 4 — Decisiones y Valores [20 min] (Todos):** Votación de cambios y validación contra los principios éticos de la organización (ej. rechazo de venta de datos).
+5. **BLOQUE 5 — Cierre [10 min] (CEO):** Definición de la matriz de compromisos (acción, responsable, fecha) y cierre del acta.
+
+*SAS Extraordinaria:* Convocada de inmediato por el CEO ante alertas algedónicas de nivel **Crítico**, superación del presupuesto de APIs antes del día 20, o parálisis de coordinación irresoluble.
+
+---
+
+## 4. Sistema 3*: Auditoría y Monitoreo (M1)
+
+> **Cap. 2:** S3* provee al metasistema información esporádica de primera mano directamente desde las operaciones de la unidad viable, evitando pasar por los canales jerárquicos estándar del S1. Esto previene que la información sea filtrada por directores locales interesados en reportar únicamente datos favorables. No es rutinario ni autoritario; su uso abusivo destruye la autonomía del S1.
+
+**Existencia:** Representado por **auditorías de código cruzadas**, **encuestas de NPS aleatorias** y **auditorías financieras** de consumo cloud.
+
+**Calidad:** Ejecutado mediante herramientas automáticas (Sentry para excepciones, SonarQube para calidad de código) y observación cualitativa directa (*customer shadowing* o entrevistas cortas con alumnos beta).
+
+**Desempeño (Independencia Estructural - M1):** Para garantizar la veracidad de la auditoría, **quien audita una unidad no puede pertenecer a ella**. En el equipo de 2-5 personas, se implementa una **rotación cruzada mensual** fija asignada por el CEO al inicio del semestre:
+- El integrante de Ventas B2B audita la calidad del código y UI de Ingeniería.
+- El integrante de Ingeniería audita la veracidad de los leads en el CRM de Ventas.
+- El integrante de Soporte audita la coherencia de la narrativa en los posts de Growth.
+
+#### Plantilla del Informe de Auditoría S3*
+El auditor de turno completa y entrega al CEO el siguiente formato mensual:
+```text
+INFORME DE AUDITORÍA S3* — [Nombre de la unidad auditada]
+──────────────────────────────────────────────────────────
+Fecha: [dd/mm/aaaa]
+Auditor: [Nombre y Rol en el equipo, ajeno a la unidad]
+──────────────────────────────────────────────────────────
+1. Variables revisadas y método de verificación (ej. inspección visual CRM, Sentry logs)
+2. Hallazgos que coinciden con los reportes habituales del S1
+3. Hallazgos que difieren o no coinciden con los reportes habituales
+4. Puntos ciegos (aspectos operativos que no están siendo medidos)
+5. Calificación de Salud Operativa: Verde / Amarillo / Rojo
+6. Recomendación de acción al CEO (S3)
+──────────────────────────────────────────────────────────
+Distribución: Envío exclusivo al CEO. El CEO determina cuándo y cómo
+comunicarlo al responsable de la unidad auditada para no generar desconfianza.
+```
+
+**Flujo de Acción del S3:** Si el informe de auditoría revela un problema recurrente, el CEO prioriza la creación o ajuste de un mecanismo de coordinación (S2). Solo interviene directamente (ejercicio de autoridad de S3) si la coordinación automática falla o la salud operativa se clasifica como Roja.
 
 ---
 
 ## 5. Sistema 2: Coordinación (Local y Corporativo)
 
-> **Cap. 2:** S2 amortigua las oscilaciones y evita conflictos entre las unidades del S1. **No emite órdenes** — provee servicios de coordinación. El Cap. 2 distingue un S2 corporativo (entre las grandes unidades del S1) y S2 locales (dentro de cada unidad para coordinar sus sub-equipos internos).
+> **Cap. 2:** S2 amortigua las oscilaciones y evita conflictos entre las unidades del S1. **No emite órdenes** — provee canales y servicios de coordinación automática. El Cap. 2 distingue un S2 corporativo (entre las grandes unidades del S1) y S2 locales (dentro de cada unidad para coordinar sus sub-equipos internos).
 
-### 5.1 Sistema 2 Corporativo (entre Ingeniería, Ventas B2C, Ventas B2B, Soporte)
-**Responsable:** CEO/COO como árbitro + procesos formales compartidos.
+### 5.1 Sistema 2 Corporativo (Mecanismos S2 entre B2C y B2B — M5)
+**Responsable:** CEO / COO como árbitro y diseñador de los mecanismos formales compartidos.
 
-**Mecanismos:**
-1. **Esquemas de datos estandarizados:** YAML frontmatter y estructura de directorios Markdown normalizados — el "idioma común" entre Producto, Ventas y Soporte que impide desajustes técnicos.
-2. **Matriz de Sizing:** Limita el volumen de compromisos B2B que Ventas puede firmar mensualmente en función de la velocidad de entrega de Ingeniería (puntos de historia disponibles).
-3. **Release Calendar:** Ventana mensual coordinada donde Ingeniería comunica qué funcionalidades son estables en producción antes de que Ventas las incluya en demos.
-4. **SLA Internos:** Ingeniería se compromete a resolver bugs críticos reportados por Soporte en < 4 horas durante días hábiles.
+Para evitar que los esfuerzos comerciales de B2C y B2B colisionen o sobrecarguen la capacidad de entrega de Ingeniería, se establecen cuatro canales de coordinación:
 
-**Previene:** Que Ventas B2B prometa integraciones que Ingeniería no puede entregar, o que Soporte escale tickets a Ingeniería sin priorización, saturando los sprints.
+1. **Coherencia de Narrativa Pública:** Antes de publicar cualquier mensaje en redes que mencione precios, promociones o gratuidad de YachaqAI, el integrante de B2C notifica al de B2B con al menos `48 horas` de anticipación. Esto evita devaluar la propuesta institucional del piloto. Si el responsable de B2B no objeta en ese plazo, la publicación procede (silencio es aprobación para evitar cuellos de botella).
+2. **Calendario de Acciones Externas Compartido:** En Notion se mantiene un calendario semanal centralizado donde cada unidad registra el lunes las campañas, lanzamientos o demostraciones planificadas. Esto evita saturar los mismos canales de difusión universitaria.
+3. **Reporte Mensual de Señales Cruzadas:** El responsable de B2C comparte un reporte de perfiles de usuario y carreras más activas con B2B (para orientar nuevos pilotos); el de B2B comparte el feedback cualitativo y necesidades pedagógicas reportadas por los docentes con Ingeniería y B2C.
+4. **Protocolo de Crisis de Reputación:** Ante cualquier queja pública o malentendido con un docente, B2C coordina la respuesta en redes en menos de `24 horas` y B2B contacta al docente de forma directa e inmediata para contener el impacto, sin necesidad de escalar previamente a la dirección.
 
-### 5.2 Sistema 2 Local — Ingeniería (S1.1)
+#### Mecanismos de Coordinación con Ingeniería (S2 Corp):
+- **Esquemas de datos estandarizados:** YAML frontmatter y estructura de directorios Markdown normalizados — el "idioma común" entre Producto, Ventas y Soporte que impide desajustes técnicos.
+- **Matriz de Sizing:** Limita el volumen de compromisos B2B que Ventas puede firmar mensualmente en función de la velocidad de entrega de Ingeniería (puntos de historia disponibles).
+- **Release Calendar:** Ventana mensual coordinada donde Ingeniería comunica qué funcionalidades son estables en producción antes de que Ventas las incluya en demos.
+- **SLA Internos:** Ingeniería se compromete a resolver bugs críticos reportados por Soporte en < 4 horas durante días hábiles.
+
+### 5.2 Mecanismo S2 de Cuadro de Mando Semanal por Unidad (M2)
+Para evitar que el CEO reciba variedad incomprensible de cada unidad y que el metasistema se sobrecargue, cada integrante responsable actualiza de forma autónoma su propia hoja de cálculo de Google Sheets cada lunes antes de las 10am:
+
+```text
+CUADRO DE MANDO SEMANAL — [Nombre de la Unidad Operativa]
+Responsable: [Nombre]  |  Semana: [dd/mm/aaaa al dd/mm/aaaa]
+─────────────────────────────────────────────────────────────
+Indicador       | Valor actual | Objetivo | Estado (🟢/🟡/🔴)
+─────────────────────────────────────────────────────────────
+[KPI principal] | [valor]      | [meta]   | [Estado]
+[KPI 2]         | [valor]      | [meta]   | [Estado]
+[KPI 3]         | [valor]      | [meta]   | [Estado]
+─────────────────────────────────────────────────────────────
+¿Hubo desviación significativa esta semana? [Sí/No] - [Causa en 1 línea]
+¿Qué acción correctora ejecuté o propongo? [Texto libre]
+¿Se requiere la intervención del metasistema (S3)? [Sí/No]
+─────────────────────────────────────────────────────────────
+```
+*Justificación de la Cadencia Semanal:* Permite detectar desviaciones antes de que se pierda el sprint completo y encaja con la cadencia de planificación ágil del equipo (1-2 semanas), sin la sobrecarga insostenible de una medición diaria para estudiantes de dedicación parcial.
+
+### 5.3 Sistema 2 Local — Ingeniería (S1.1)
 **Responsable:** CTO + Scrum Master.
+**Mecanismos:** Sprints semanales (Scrum), tablero Kanban compartido (GitHub Projects), estándares de branching en Git, revisiones de PR obligatorias antes de merge a producción.
 
-**Mecanismos:** Sprints semanales (Scrum), tablero Kanban compartido (GitHub Projects/Linear), estándares de branching en Git, revisiones de PR obligatorias antes de merge a producción.
-
-### 5.3 Sistema 2 Local — Ventas (S1.2a y S1.2b)
+### 5.4 Sistema 2 Local — Ventas (S1.2a y S1.2b)
 **Responsable:** Head of Growth + Head of Sales.
+**Mecanismos:** CRM compartido (Hubspot/Notion) entre B2C y B2B, reglas de asignación y calificación de leads, calendario de pauta publicitaria.
 
-**Mecanismos:** CRM compartido (HubSpot) entre B2C y B2B, reglas de calificación de leads, calendario compartido de campañas que evita que B2C y B2B compitan por el mismo presupuesto de pauta en el mismo mes.
-
-### 5.4 Sistema 2 Local — Soporte e Infraestructura (S1.3)
+### 5.5 Sistema 2 Local — Soporte e Infraestructura (S1.3)
 **Responsable:** Head of Customer Success + DevOps Lead.
-
-**Mecanismos:** Sistema de priorización de tickets (P0-P3), protocolos de escalamiento al DevOps, runbooks de respuesta a incidencias de servidor.
+**Mecanismos:** Matriz de priorización de incidencias (P0-P3), turnos de guardia rotativos para incidencias, runbooks de DevOps y guías de respuesta pre-aprobadas para soporte al usuario.
 
 ---
 

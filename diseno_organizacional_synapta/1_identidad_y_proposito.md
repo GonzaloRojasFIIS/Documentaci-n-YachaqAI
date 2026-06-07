@@ -69,15 +69,15 @@ El entorno de Synapta es altamente complejo. El Cap. 2 exige analizar al menos 1
 | **Económica** | CFO + Head of Growth | El mercado EdTech en LATAM está valorado entre USD $11,400M y $18,300M en 2025/2026 *(IMARC Group, 2025)* [1]. | CAGR proyectado de **11.8%–12.5%** entre 2026–2034 *(IMARC Group, 2025)* [1]. |
 | **Sociológica** | Head of Growth + Head of Customer Success | Aprox. **27% de los estudiantes universitarios en LATAM desertan en el primer año** *(Scielo, 2023)* [2] — la demanda de retención estudiantil es urgente. | Transición al paradigma de aprendizaje activo basado en grafos semánticos personalizados. |
 | **Política** | CEO + Asesor Legal | Gobiernos como Brasil invierten USD $5,000M en digitalización escolar *(IMARC Group, 2025)* [1]. | Políticas nacionales de soberanía de IA en sectores educativos. |
-| **Legislativa** | Asesor Legal | Ley N° 29733 de Protección de Datos Personales (Perú), GDPR (mercados europeos). | Regulaciones de uso ético de IA en educación superior y copyright de PDFs procesados. |
+| **Legislativa** | Asesor Legal | Ley N° 29733 de Protección de Datos Personales (Perú). | Regulaciones de uso ético de IA en educación superior y directivas específicas de la Autoridad Nacional de Protección de Datos Personales (APDP) de Perú. |
 | **Institucional** | Head of Sales | Las **105 universidades licenciadas** en Perú *(SUNEDU, 2026)* [3] operan bajo sistemas LMS tradicionales (Moodle, Canvas). | Centralización de métricas de retención estudiantil exigidas por SUNEDU como indicador de calidad. |
-| **Mercados** | Head of Growth | Herramientas desarticuladas: Anki (SRS), Obsidian (PKM), PDF.ai (lectura IA). No existe un producto integrado en LATAM. | Consolidación de plataformas "Estudio Inteligente Todo en Uno" con licenciamiento institucional. |
+| **Mercados** | Head of Growth | Herramientas desarticuladas: Anki (SRS), Obsidian (PKM), PDF.ai (lectura IA). No existe un producto integrado en el mercado peruano. | Consolidación de plataformas "Estudio Inteligente Todo en Uno" con licenciamiento institucional. |
 | **Proveedores** | CTO + Head of Infrastructure | Costos de APIs cloud (Google Gemini 1.5 Flash, GPT-4o-mini) competitivos en precio por millón de tokens. | Emergencia de SLMs locales (Llama-3, Phi-3) ejecutables en dispositivos del usuario. |
 | **Competidores** | Head of Growth + CTO | Anki (curva de aprendizaje alta), Notion AI (sin SRS), RemNote (nicho anglosajón). | Asistentes cognitivos nativos en navegadores y sistemas operativos (Microsoft Copilot, Google NotebookLM). |
 | **Tecnológica** | CTO | Madurez en embeddings semánticos (`text-embedding-004`) y parsers estructurados (LlamaParse). | Agentes autónomos multi-paso y grafos vectoriales en memoria con auto-actualización. |
 | **Ecológica** | CFO + CTO | Consumo energético de centros de datos para consultas RAG. | Regulación de eficiencia energética en cómputo (computación verde). |
-| **Educativa** | Head of Customer Success | Cualquier aprendiz intensivo (universitarios, profesionales en formación continua, investigadores) enfrenta baja retención activa: la Curva de Ebbinghaus muestra que sin repaso activo se pierde el 70% del contenido nuevo en 24 horas. | Estándar de "Aprendizaje Activo" adoptado tanto en curricula universitaria como en programas de desarrollo profesional continuo en LATAM. |
-| **Demográfica** | Head of Growth | Más de **1.2 millones de estudiantes matriculados** en universidades peruanas licenciadas *(SUNEDU SIU, 2023/2024)* [4]; más de 30 millones en LATAM *(Banco Mundial, 2021)* [5]. | Incremento de adultos mayores de 35 años que cursan posgrados y requieren herramientas de alta densidad de conocimiento. |
+| **Educativa** | Head of Customer Success | Cualquier aprendiz intensivo (universitarios, profesionales en formación continua, investigadores) enfrenta baja retención activa: la Curva de Ebbinghaus muestra que sin repaso activo se pierde el 70% del contenido nuevo en 24 horas. | Estándar de "Aprendizaje Activo" adoptado tanto en curricula universitaria como en programas de desarrollo profesional continuo en Perú. |
+| **Demográfica** | Head of Growth | Más de **1.2 millones de estudiantes matriculados** en universidades peruanas licenciadas *(SUNEDU SIU, 2023/2024)* [4]; la población de educación superior en el Perú es el mercado foco inicial. | Incremento de adultos mayores de 35 años que cursan posgrados y requieren herramientas de alta densidad de conocimiento. |
 
 ---
 
@@ -89,7 +89,7 @@ Para cada variable crítica del entorno se define: el sensor, el responsable, la
 graph LR
     subgraph "Entorno (Alta Variedad)"
         E1["Cambios tecnológicos (LLMs)"]
-        E2["Regulaciones legales (GDPR/29733)"]
+        E2["Regulaciones legales (29733)"]
         E3["Mercado y competidores"]
         E4["Comportamiento de estudiantes"]
     end
@@ -116,7 +116,7 @@ graph LR
 | :--- | :--- | :--- | :--- | :--- |
 | **Variabilidad costo/rendimiento LLMs** | CTO | Consolas GCP y OpenAI; feeds arXiv | Tiempo real (alertas) + revisión diaria | Semáforo de salud del servicio (Verde/Amarillo/Rojo) en dashboard de ingeniería |
 | **Retención y adherencia de estudiantes** | Head of Customer Success | Tabla `respuestas_srs` y `srs_estados` en BD de producción | Semanal automático | Métricas agregadas (retentiva promedio, tasa abandono) → gráficos de evolución para Producto |
-| **Cumplimiento y privacidad de datos** | Asesor Legal + CEO | Boletín El Peruano, Portales de la UE (GDPR) | Semanal | Reporte legal traducido a impacto técnico (Aprobado/Requiere ajuste/Requiere consentimiento) |
+| **Cumplimiento y privacidad de datos** | Asesor Legal + CEO | Boletín El Peruano, directivas de la APDP (Perú) | Semanal | Reporte legal traducido a impacto técnico (Aprobado/Requiere ajuste/Requiere consentimiento) |
 | **Adquisición B2C y B2B** | Head of Growth + Head of Sales | GA4, PostHog, CRM (HubSpot) | Diaria (B2C), semanal (B2B) | CAC y MRR en tiempo real → reportes al equipo de Crecimiento y al CFO |
 
 ---
