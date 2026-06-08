@@ -51,6 +51,24 @@
 3. **Privacidad por diseño:** Los documentos del usuario pueden procesarse completamente en local (modo offline) o mediante proveedores cloud con encriptación de tránsito.
 4. **Progresión verificable:** El sistema prohíbe avanzar sin evidencia de comprensión (cuestionarios obligatorios por módulo).
 
+### 1.3 Benchmarking y Ventajas Competitivas de YachaqAI
+
+Para comprender la diferenciación de YachaqAI en el ecosistema actual, es necesario realizar un benchmarking frente a las herramientas populares del mercado EdTech y PKM. Aunque herramientas como Google NotebookLM son excelentes para la lectura asistida y síntesis por IA, operan como sistemas indirectos y cerrados. YachaqAI se posiciona en la intersección de un gestor de conocimiento local (PKM) y un sistema estructurado de aprendizaje activo (LMS) con repetición espaciada científica.
+
+| Criterio de Comparación | Anki (Directo) | RemNote (Directo) | Notion AI (Directo) | Google NotebookLM (Indirecto) | YachaqAI |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Enfoque Core** | Repetición Espaciada (SRS) pura. | Repetición Espaciada (SRS) + Toma de apuntes. | Toma de notas general y base de conocimiento. | Síntesis, resúmenes y chat sobre documentos. | **Estudio Activo e Interacción Pedagógica (LMS + SRS).** |
+| **Algoritmo de Retención Activa** | SM-2 tradicional o FSRS manual. | Algoritmo propietario basado en SM-2. | No posee algoritmo de retención. | No posee algoritmo de retención. | **Algoritmo FSRS integrado con propagación en Grafo de Conocimiento.** |
+| **Creación de Fichas de Repaso** | Muy Alto (Manual tarjeta por tarjeta). | Medio (Generación automática de tarjetas con IA). | Alto (Manual, con plantillas de repaso rudimentarias). | Bajo (Genera guías de estudio, pero no repasos interactivos). | **Muy Bajo (Ingesta inteligente con LlamaParse, estructuración a Markdown y auto-generación de flashcards).** |
+| **Portabilidad y Soberanía** | Propietario (SQLite local con extensión .apkg). | Cerrado (Base de datos propietaria en su nube). | Cerrado (Ecosistema bloqueante "Vendor Lock-in", exportaciones MD defectuosas). | Cerrado (Datos cautivos en la nube de Google Drive). | **Abierto (Markdown de texto plano libre de ataduras y fácilmente exportable para su uso personal).** |
+| **Privacidad de Datos** | Local (seguro pero sin colaboración web nativa). | Nube propietaria en EE. UU.; políticas de privacidad estándar. | Nube centralizada; los datos pueden ser usados para entrenamiento. | Nube centralizada Google; entrena sus modelos con datos en versión estándar. | **Local-First (Soporte local vía Ollama) y Nube Empresarial con garantía de no-entrenamiento.** |
+| **Módulo B2B / Integración LMS** | No posee. | No posee. | No posee. | No posee. | **Sí (B2B institucional: indicadores de retención para docentes e integración LTI con Canvas/Moodle).** |
+
+#### Ventajas Competitivas de YachaqAI:
+1. **El Bucle Docente-Estudiante (Integración LMS):** YachaqAI no es una herramienta aislada. Se integra mediante el protocolo LTI a los LMS institucionales (Canvas y Moodle) de las universidades. Permite a los docentes visualizar mapas agregados y anonimizados de los conceptos que más dificultad causan a los alumnos (e.g. mayor porcentaje de errores en flashcards del tema X), permitiendo intervenciones pedagógicas oportunas y previniendo la deserción escolar.
+2. **Propagación Semántica de Maestría:** A diferencia de Anki o RemNote, que tratan cada tarjeta de repaso como una entidad atómica inconexa, YachaqAI vincula el motor FSRS al grafo de conceptos. Si el alumno demuestra comprender un concepto primario, la maestría se propaga inteligentemente a los nodos hijos relacionados, reduciendo el volumen de repasos diarios innecesarios y optimizando el tiempo de estudio.
+3. **Privacidad Local-First y Cumplimiento Regulatorio (Ley N° 29733):** Ofrece un motor ejecutable 100% local (Local-First vía Ollama) para que los documentos y las notas académicas no salgan del computador del usuario o de los servidores de la universidad, superando las restricciones legales y el recelo de propiedad intelectual que generan los sistemas en la nube cautivos de corporaciones multinacionales.
+
 ---
 
 ## 2. Arquitectura General del Sistema
