@@ -1,0 +1,5 @@
+node_modules/
+**/node_modules/
+desktop.ini
+**/desktop.ini
+docx_generator/diag1.png
