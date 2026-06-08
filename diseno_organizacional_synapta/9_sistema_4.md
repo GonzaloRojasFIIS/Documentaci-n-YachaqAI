@@ -14,6 +14,7 @@
     - [3.1 Los Dos Lazos Homeostáticos del S4](#31-los-dos-lazos-homeostaticos-del-s4)
     - [3.2 Radares Estratégicos de Vigilancia](#32-radares-estrategicos-de-vigilancia)
     - [3.3 Matriz de Sensores, Transductores, Capacidad y Cadencia](#33-matriz-de-sensores-transductores-capacidad-y-cadencia)
+    - [3.4 Benchmarking Multidimensional de Competidores e Identificación de Ventajas Competitivas](#34-benchmarking-multidimensional-de-competidores-e-identificacion-de-ventajas-competitivas)
 - [Parte 2: Modelado y Proyección Sistemática](#parte-2-modelado-y-proyeccion-sistematica)
   - [4. Diseño del sistema de inteligencia estratégica](#4-diseno-del-sistema-de-inteligencia-estrategica)
     - [4.1 La Sala de Operaciones (Operations Room) y sus 5 Pantallas](#41-la-sala-de-operaciones-operations-room-y-sus-5-pantallas)
@@ -100,6 +101,25 @@ graph TD
 | **Tecnológica** | CTO (Sensor S4 Técnico) | • Feeds de arXiv (sección cs.CL).<br>• Vertex AI Pricing Console.<br>• Logs de latencia y tokens en Supabase. | Diaria / Continua | Traduce métricas técnicas de contexto y tokens a costo financiero por usuario activo y velocidad de respuesta (ej. *"Gemini 2.5 Flash Lite reduce el costo variable en 30%"* [13]). | Canal HTTPS/Sentry capaz de procesar hasta 50,000 eventos de telemetría/día. |
 | **Regulatoria** | Head of Sales + Asesor Legal Externo (Sensor S4 Regulatorio) | • Diario Oficial El Peruano.<br>• Resoluciones del Consejo Directivo de SUNEDU.<br>• Directivas de la APDP (Ley 29733). | Semanal | Traduce leyes y circulares administrativas a requisitos técnicos en el backlog de Ingeniería (ej. *"SUNEDU exige un portafolio de evidencias de estudio; se requiere exportar logs de repaso en PDF"* [3]). | Canal de comunicación por correo electrónico; capacidad máxima de 3 reportes legales/semana. |
 | **Mercado y Competencia** | Head of Growth (Sensor S4 de Mercado) | • Foros de EdTech Latam.<br>• Google Alerts ("NotebookLM", "Anki").<br>• Onboarding feedback de YachaqAI. | Semanal | Traduce movimientos de competidores en hipótesis de producto y variaciones del CAC/LTV (ej. *"NotebookLM lanza versión escolar; debemos acelerar la exportación abierta Markdown para diferenciarnos"* [11]). | Canal Slack/Hubspot; capacidad máxima de procesar 5 análisis de competidores/mes. |
+
+#### 3.4 Benchmarking Multidimensional de Competidores e Identificación de Ventajas Competitivas
+Para realizar una planeación estratégica robusta en el S4, es vital aclarar que **Google NotebookLM no representa la competencia directa de YachaqAI**, sino un competidor *indirecto* en la categoría de lectura asistida por IA. Los competidores directos en productividad académica y retención activa son **Anki** y **RemNote**, mientras que **Notion AI** lidera la gestión general de apuntes en la nube. 
+
+YachaqAI se diferencia por una propuesta de valor estructurada para resolver el dolor pedagógico e institucional (B2B) en Latinoamérica, como se detalla en el siguiente cuadro comparativo:
+
+| Criterio de Comparación | Anki (Directo) | RemNote (Directo) | Notion AI (Directo) | Google NotebookLM (Indirecto) | YachaqAI (Synapta) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Enfoque Pedagógico Core** | Repetición Espaciada (SRS) pura. | Repetición Espaciada (SRS) + Toma de apuntes. | Toma de notas general y base de conocimiento. | Síntesis, resúmenes y chat sobre documentos. | **Estudio Activo e Interacción Pedagógica (LMS + SRS).** |
+| **Algoritmo de Retención Activa** | SM-2 tradicional o FSRS manual. | Algoritmo propietario basado en SM-2. | No posee algoritmo de retención activa. | No posee algoritmo de retención activa. | **Algoritmo FSRS integrado con propagación en Grafo de Conocimiento.** |
+| **Esfuerzo de Creación de Contenido** | Muy Alto (Manual tarjeta por tarjeta). | Medio (Generación automática de tarjetas con IA). | Alto (Manual, con plantillas de repaso rudimentarias). | Bajo (Genera guías de estudio automáticas, pero no repasos interactivos). | **Muy Bajo (Ingesta inteligente con LlamaParse, estructuración a Markdown y auto-generación de flashcards).** |
+| **Portabilidad y Soberanía de Datos** | Propietario (SQLite local con extensión .apkg). | Cerrado (Base de datos propietaria en su nube). | Cerrado (Ecosistema bloqueante "Vendor Lock-in", exportaciones CSV/MD defectuosas). | Cerrado (Datos cautivos en la nube de Google Drive). | **Abierto (Markdown de texto plano libre de ataduras y fácilmente exportable para su uso personal).** |
+| **Privacidad y Cumplimiento (Ley N° 29733)** | Local (seguro pero sin colaboración web nativa). | Nube propietaria en EE. UU.; políticas de privacidad estándar. | Nube centralizada; los datos pueden ser usados para entrenamiento según el plan. | Nube centralizada Google; entrena sus modelos con datos subidos en su versión estándar. | **Local-First (Soporte local vía Ollama) y Nube Empresarial con garantía de no-entrenamiento.** |
+| **Módulo Analítico e Integración LMS (Canvas/Moodle)** | No posee. | No posee. | No posee. | No posee. | **Sí (B2B institucional: indicadores de retención agregados para docentes e integración LTI con Canvas/Moodle).** |
+
+#### Ventajas Competitivas Clave de YachaqAI (Foco Estratégico S4)
+1. **Homeostato Docente-Estudiante (B2B2C):** A diferencia de todas las herramientas anteriores (que son de uso estrictamente individual y desconectadas de las facultades), YachaqAI integra a las autoridades académicas a través de informes agregados (anonimizados) sobre los conceptos donde los estudiantes muestran mayor dificultad (Panel 1 de S3), previniendo activamente la deserción universitaria exigida por SUNEDU [3].
+2. **Propagación en Grafo Semántico:** En YachaqAI, si un estudiante demuestra dominio sobre el concepto "Mitosis", el algoritmo FSRS propaga automáticamente una actualización de maestría a los conceptos hijos y relacionados ("Profase", "Anafase") en el grafo de conocimiento, optimizando el tiempo de estudio diario. Anki o RemNote tratan las tarjetas de forma aislada e inconexa.
+3. **Local-First y Cumplimiento de Privacidad de Datos:** La opción de ejecutar modelos de lenguaje locales (vía Ollama) sin conexión a internet amplifica la variedad de cumplimiento normativo institucional, atrayendo a universidades peruanas reticentes a compartir propiedad intelectual académica o registros de menores con nubes extranjeras [22].
 
 ---
 
