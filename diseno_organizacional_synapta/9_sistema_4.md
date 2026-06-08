@@ -178,6 +178,18 @@ Si un sensor de S4 detecta una disrupción crítica en el entorno que amenaza la
 ### 5. Diseño del sistema de prospectiva y escenarios
 Para tomar decisiones basadas en datos y no en intuiciones subjetivas, el S4 de Synapta utiliza **Modelos de Simulación Dinámica** recomendados por José Pérez Ríos [2], [5]. Estos modelos permiten evaluar el impacto de variables externas a través de escenarios "qué pasaría si" (What-if) [2], [5].
 
+##### Aclaración Metodológica sobre la Nomenclatura de los Modelos (M1, M2, M3, M5)
+En el diseño cibernético de Synapta, la nomenclatura numérica de los modelos de simulación responde a una lógica estructural rigurosa: **el número del modelo representa el subsistema específico del VSM que está siendo modelado (el objeto de estudio), mientras que el metasistema (S3 o S4) actúa como el ejecutor de la simulación según el horizonte temporal del bucle homeostático:**
+
+*   **Modelos de Presente y Optimización Interna (Ejecutados por el Sistema 3):**
+    *   **Modelo M1 (Modelado del Sistema 1):** Simula el gasto variable de APIs e infraestructura. El Sistema 3 lo ejecuta para controlar los recursos consumidos por las operaciones de las unidades del **Sistema 1** (objeto modelado).
+    *   **Modelo M3 (Modelado del Sistema 3):** Proyecta la disponibilidad de Story Points del equipo. El Sistema 3 lo ejecuta para evaluar y gestionar su propia capacidad interna de control y cohesión de recursos (objeto modelado).
+*   **Modelos de Futuro y Prospectiva Externa (Ejecutados por el Sistema 4):**
+    *   **Modelo M2 (Modelado del Sistema 2):** Simula la pérdida de un docente piloto y su impacto en la retención estudiantil. El Sistema 4 lo ejecuta para proyectar cómo esta perturbación altera la estabilidad y coordinación del **Sistema 2** (objeto modelado).
+    *   **Modelo M5 (Modelado del Sistema 5):** Proyecta a 5 años la viabilidad financiera y las normativas de SUNEDU. El Sistema 4 lo ejecuta para simular escenarios extremos y presentar propuestas de adaptación a las políticas e identidad de largo plazo del **Sistema 5** (objeto modelado).
+    *   *Nota sobre el "Modelo 4" (M4):* No existe como simulación dinámica cuantitativa porque el **Sistema 4 es el sujeto ejecutor** del modelado prospectivo y su estructura ya está representada interactivamente en la **Pantalla 4 (El Modelo Cibernético)** mediante mapas en VSMod®.
+
+
 #### 5.1 Modelo M2 (Impacto de Pérdida del Piloto B2B) y Justificación de Parámetros
 Este modelo evalúa la vulnerabilidad de la tracción inicial de YachaqAI frente al abandono o cancelación por parte de docentes clave en universidades peruanas [3].
 
