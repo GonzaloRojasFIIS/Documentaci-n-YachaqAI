@@ -46,7 +46,7 @@
 
 ### 1.2 Principios de Diseño
 
-1. **Markdown como fuente de verdad (Single Source of Truth):** Todos los datos de conocimiento viven en archivos `.md` portables, exportables a Obsidian, Notion o cualquier editor.
+1. **Markdown como fuente de verdad (Single Source of Truth):** Todos los datos de conocimiento viven en archivos `.md` portables, fácilmente exportables para su uso personal en Notion o cualquier editor de Markdown.
 2. **IA como amplificador, no como reemplazante:** El usuario mantiene control editorial completo sobre su base de conocimiento.
 3. **Privacidad por diseño:** Los documentos del usuario pueden procesarse completamente en local (modo offline) o mediante proveedores cloud con encriptación de tránsito.
 4. **Progresión verificable:** El sistema prohíbe avanzar sin evidencia de comprensión (cuestionarios obligatorios por módulo).
@@ -316,7 +316,7 @@ graph LR
 
 ## 4. Estructura de Almacenamiento Markdown Híbrido
 
-El sistema utiliza el sistema de archivos local basado en Markdown como la **fuente de verdad del contenido**. Esto permite exportar el mazo completo a Obsidian, Notion u otras herramientas de PKM (Personal Knowledge Management) sin ninguna dependencia propietaria.
+El sistema utiliza el sistema de archivos local basado en Markdown como la **fuente de verdad del contenido**. Esto permite que sea fácilmente exportable para su uso personal en Notion u otras herramientas de PKM (Personal Knowledge Management) sin ninguna dependencia propietaria.
 
 ### 4.1 Estructura de Directorios
 
@@ -1217,7 +1217,7 @@ El usuario puede configurar desde la interfaz:
 2. **Datos enviados a LLMs externos:** Solo se envían chunks de texto del contenido del usuario necesarios para la tarea actual. Nunca se envían PDFs completos en un solo request.
 3. **Modo Privado (Local-First):** El usuario puede optar por usar un LLM local (Ollama + Gemma/Mistral) para que ningún dato salga de su máquina. En este modo, la velocidad de procesamiento es menor pero la privacidad es total.
 4. **Eliminación de cuenta:** Al eliminar la cuenta, el usuario tiene 30 días para descargar sus archivos MD. Después de esa fecha, todos los datos de la BD se eliminan de forma irreversible.
-5. **Exportación de datos:** El usuario puede exportar su mazo completo en cualquier momento como un ZIP con todos los archivos MD, compatible con Obsidian.
+5. **Exportación de datos:** El usuario puede exportar su mazo completo en cualquier momento como un ZIP con todos los archivos MD, fácilmente exportable para su uso personal en otros editores.
 
 ### 15.3 Autenticación y Autorización
 
@@ -1355,7 +1355,7 @@ gantt
         Sistema de notificaciones        :2026-11, 2026-12
         Dashboard de progreso            :2026-11, 2026-12
         Onboarding conversacional        :2026-12, 2027-01
-        Exportacion a Obsidian           :2027-01, 2027-02
+        Exportacion a Markdown personal  :2027-01, 2027-02
     section V2 - Fase 3
         Modo local-first con Ollama      :2027-02, 2027-04
         Soporte multi-mazo y colecciones :2027-03, 2027-05
@@ -1382,7 +1382,7 @@ gantt
 | **V1** | Sistema de notificaciones | Push y email con Celery + Redis | Media | FCM, Resend |
 | **V1** | Dashboard de progreso | Métricas de retención y racha de estudio | Media | Recharts |
 | **V1** | Onboarding conversacional completo | Agente con manejo de edge cases y repregunta | Alta | LangGraph |
-| **V1** | Exportación Obsidian | ZIP con todos los MD, compatible con vault de Obsidian | Baja | — |
+| **V1** | Exportación Markdown personal | ZIP con todos los MD, compatible con cualquier lector local | Baja | — |
 | **V2** | Modo local-first | LLM local con Ollama; embeddings locales sin internet | Muy Alta | Ollama, all-MiniLM |
 | **V2** | Multi-mazo | Soporte de múltiples colecciones de conocimiento por usuario | Alta | Refactorización de BD |
 | **V2** | App móvil | PWA o React Native con notificaciones push nativas | Muy Alta | FCM |
@@ -1421,7 +1421,7 @@ gantt
 **P: ¿Por qué usar SQLite en desarrollo si el sistema de archivos MD ya existe?**  
 R: Los archivos MD son óptimos para el contenido de texto y la portabilidad, pero son ineficientes para consultas relacionales como "dame todos los nodos con R < 0.7 cuyo próximo repaso sea hoy". La BD relacional responde estas consultas en microsegundos; escanear cientos de archivos MD llevaría segundos.
 
-**P: ¿Qué pasa si el usuario edita los archivos MD directamente con Obsidian mientras YachaqAI está abierto?**  
+**P: ¿Qué pasa si el usuario edita los archivos MD directamente con otros editores de Markdown locales mientras YachaqAI está abierto?**  
 R: El FileWatcher de `watchdog` detecta el cambio, parsea el archivo modificado, y actualiza la BD. Si el YAML frontmatter fue modificado externamente (lo que no está soportado), el sistema lo restaura desde la BD y advierte al usuario.
 
 **P: ¿Por qué LangGraph en lugar de AutoGen o CrewAI para los agentes?**  
@@ -1447,8 +1447,8 @@ Este apéndice documenta cómo YachaqAI adopta, adapta y extiende el patrón LLM
 | Ingesta incremental que actualiza páginas existentes | Protocolo en §5.5: compara contra `index.md`, actualiza si existe, crea si no existe, señala contradicciones | ✅ Adoptado y formalizado |
 | Archivar respuestas valiosas de vuelta al wiki | Si la respuesta supera 300 palabras o sintetiza 3+ fuentes, se propone crear un nodo tipo `sintesis` | ✅ Adoptado con criterio automático |
 | El LLM escribe la wiki; el humano solo lee | Extendido: el LLM escribe y el usuario puede editar con el modo editor dual (YachaqAI es LMS, no solo PKM) | 🔵 Extendido intencionalmente |
-| Grafo visual (Obsidian graph view) | Reemplazado por grafo semáforo dinámico con estados de maestría — la dimensión pedagógica supera la puramente estructural | 🔵 Reemplazado con propósito pedagógico |
-| Compatibilidad con Obsidian | El vault exportado es compatible nativamente (Wikilinks, YAML Frontmatter, Dataview plugin) | ✅ Mantenida como exportación |
+| Grafo visual de relación | Reemplazado por grafo semáforo dinámico con estados de maestría — la dimensión pedagógica supera la puramente estructural | 🔵 Reemplazado con propósito pedagógico |
+| Compatibilidad con editores locales | El vault exportado es compatible nativamente con la especificación estándar de Markdown (Wikilinks, YAML Frontmatter, Dataview plugin) | ✅ Mantenida como exportación |
 | Herramientas CLI opcionales (`qmd`) | El backend FastAPI expone endpoints de búsqueda consumidos por la interfaz; el usuario no necesita CLI | 🔵 Internalizado en la plataforma |
 
 > [!NOTE]

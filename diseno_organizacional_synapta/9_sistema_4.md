@@ -1,6 +1,4 @@
-# 9_sistema_4
-
-> **Validación Cap. 2 (Pérez Ríos/Beer):** Esta fase corresponde al diseño del **Sistema 4 (Inteligencia)**. Su propósito es estructurar la capacidad adaptativa de Synapta enfocándose en el **"afuera y el mañana"** [1], [2]. El S4 actúa como el sensor de variedad externa y modelador prospectivo de la organización, asegurando que la startup se anticipe a disrupciones tecnológicas, regulatorias y de mercado antes de que afecten la viabilidad del presente (gobernado por el S3) [3], [4].
+> **Validación Cap. 2 (Pérez Ríos/Beer):** Esta fase corresponde al diseño del **Sistema 4 (Inteligencia)**. Su propósito es estructurar la capacidad adaptativa de Synapta enfocándose en el **"afuera y el mañana"** [1], [2]. El S4 actúa como el sensor de variedad externa y modelador prospectivo de la organización, asegurando que la startup se anticipe a disrupciones tecnológicas, regulatorias y de mercado antes de que afecten la viabilidad del presente (gobernado por el S3) [2], [5].
 
 ---
 
@@ -22,7 +20,7 @@
 ### 1. Introducción al diseño del Sistema 4
 El **Sistema 4 (Inteligencia)** de Synapta es el órgano responsable de la **adaptación continua** [1]. Su foco de atención no es el funcionamiento cotidiano del "aquí y ahora", sino la exploración del "allá y entonces" (los cambios tecnológicos en Inteligencia Artificial, las regulaciones del sistema educativo peruano y la evolución del mercado de EdTech en Latinoamérica) [3], [5]. 
 
-En Synapta, el S4 tiene como misión capturar la complejidad y variedad del entorno futuro, procesarla y traducirla en alternativas estratégicas para que la Junta de Fundadores (S5) y la Dirección Operativa (S3) puedan tomar decisiones informadas [3], [11]. Físicamente, en las fases iniciales de la startup (Fase 1: MVP de 2-5 personas [9]), el S4 se implementa de manera **multiactiva** (donde los fundadores asumen temporalmente roles de Inteligencia al monitorear sus respectivas áreas) y se apoya en una **Sala de Operaciones Virtual** y en **Modelos de Simulación (M2 y M5)** para proyectar escenarios de viabilidad [18], [24].
+En Synapta, el S4 tiene como misión capturar la complejidad y variedad del entorno futuro, procesarla y traducirla en alternativas estratégicas para que la Junta de Fundadores (S5) y la Dirección Operativa (S3) puedan tomar decisiones informadas [2], [5]. Físicamente, en las fases iniciales de la startup (Fase 1: MVP de 2-5 personas [9]), el S4 se implementa de manera **multiactiva** (donde los fundadores asumen temporalmente roles de Inteligencia al monitorear sus respectivas áreas) y se apoya en una **Sala de Operaciones Virtual** y en **Modelos de Simulación (M2 y M5)** para proyectar escenarios de viabilidad [2], [8].
 
 ---
 
@@ -68,7 +66,7 @@ graph TD
 #### 3.1 Radares Estratégicos de Vigilancia
 1.  **Radar Tecnológico (IA y Arquitectura de Software):** Monitorea la relación costo/rendimiento de modelos fundacionales, APIs de parsers estructurados y algoritmos de repetición espaciada (SRS).
 2.  **Radar Regulatorio e Institucional (SUNEDU y Privacidad):** Vigila las normativas sobre acreditación de programas híbridos/virtuales en Perú y las directivas de la Autoridad Nacional de Protección de Datos Personales (APDP).
-3.  **Radar de Mercado y Competidores (EdTech):** Monitorea las estrategias de monetización y características de competidores directos/indirectos (NotebookLM, Obsidian, Anki, RemNote).
+3.  **Radar de Mercado y Competidores (EdTech):** Monitorea las estrategias de monetización y características de competidores directos/indirectos (NotebookLM, Anki, RemNote y otros gestores de notas locales).
 
 #### 3.2 Matriz de Sensores y Transductores del S4
 
@@ -86,9 +84,9 @@ graph TD
 El sistema de inteligencia estratégica es el encargado de consolidar la información de los radares y procesarla dentro de un entorno de decisión interactivo: la **Sala de Operaciones Virtual** [17].
 
 #### 4.1 La Sala de Operaciones - Panel 3 (Entorno Futuro)
-El Panel 3 reside en Notion y Google Sheets, y sirve de interfaz directa para las sesiones de planificación estratégica del metasistema (S3, S4 y S5) [18]. A diferencia de los Paneles 1 y 2 (enfocados en el control del presente), el Panel 3 visualiza y cruza tres tipos de información:
+El Panel 3 reside en Notion y Google Sheets, y sirve de interfaz directa para las sesiones de planificación estratégica del metasistema (S3, S4 y S5) [2], [5]. A diferencia de los Paneles 1 y 2 (enfocados en el control del presente), el Panel 3 visualiza y cruza tres tipos de información:
 1.  **Tendencias Tecnológicas:** Costo proyectado de APIs de Gemini e infraestructura cloud frente al volumen estimado de usuarios para los próximos 12 meses [13], [14], [15].
-2.  **Alertas Tempranas Regulatorias:** Semáforos de riesgo de cumplimiento normativo (ej. Verde = Todo en orden; Amarillo = SUNEDU evalúa cambios en acreditación virtual; Rojo = APDP inicia inspección sectorial de EdTechs).
+2.  **Alertas Tempranas Regulatorias:** Semáforos de riesgo de cumplimiento normativo (ej. Verde = Todo en orden; Amarillo = SUNEDU evalúa cambios en acreditación virtual [3]; Rojo = APDP inicia inspección sectorial de EdTechs [22]).
 3.  **Simulador de Escenarios Dinámicos:** Acceso directo a las interfaces de simulación de los modelos M2 y M5.
 
 #### 4.2 El Bucle de Escalamiento Algedónico del S4
@@ -97,7 +95,7 @@ Si un sensor de S4 detecta una disrupción crítica en el entorno que amenaza la
 ---
 
 ### 5. Diseño del sistema de prospectiva y escenarios
-Para tomar decisiones basadas en datos y no en intuiciones subjetivas, el S4 de Synapta utiliza **Modelos de Simulación Dinámica** recomendados por José Pérez Ríos [13]. Estos modelos permiten evaluar el impacto de variables externas a través de escenarios "qué pasaría si" (What-if) [9].
+Para tomar decisiones basadas en datos y no en intuiciones subjetivas, el S4 de Synapta utiliza **Modelos de Simulación Dinámica** recomendados por José Pérez Ríos [2], [5]. Estos modelos permiten evaluar el impacto de variables externas a través de escenarios "qué pasaría si" (What-if) [2], [5].
 
 #### 5.1 Modelo M2 (Impacto de Pérdida del Piloto B2B)
 *   **Lógica del Modelo:** Evalúa la vulnerabilidad de la tracción inicial de YachaqAI frente al abandono o cancelación por parte de docentes clave en universidades peruanas [3].
@@ -122,7 +120,7 @@ Para tomar decisiones basadas en datos y no en intuiciones subjetivas, el S4 de 
     *   Mercado Direccionable Útil (SOM) proyectado a 5 años.
     *   Volumen de licencias institucionales anuales requeridas para sostener el punto de equilibrio financiero.
 *   **Decisiones Pre-diseñadas (Acciones Correctivas):**
-    *   *Si la probabilidad de cambio regulatorio de SUNEDU supera el 60%:* S4 instruye al backlog de Ingeniería (S1.1) iniciar el desarrollo de un módulo de compatibilidad fuera de línea y exportador de evidencias de estudio en PDF para asegurar el cumplimiento normativo preventivo.
+    *   *Si la probabilidad de cambio regulatorio de SUNEDU supera el 60%:* S4 instruye al backlog de Ingeniería (S1.1) iniciar el desarrollo de un módulo de compatibilidad fuera de línea y exportador de evidencias de estudio en PDF para asegurar el cumplimiento normativo preventivo [3], [23].
 
 ---
 
@@ -133,8 +131,8 @@ Para asegurar la adaptabilidad, se pre-diseñan dos planes estratégicos ante di
 #### Disrupción A: Google NotebookLM lanza una versión corporativa gratuita para universidades SUNEDU
 *   **Análisis del Entorno (S4):** Google cuenta con ventajas de capital y modelos de gran escala. Sin embargo, NotebookLM es un sistema cerrado ("Vendor Lock-in") que no permite exportar notas en formato abierto y restringe la privacidad de datos.
 *   **Plan de Adaptación:**
-    1.  **Diferenciación del Ethos (S5):** Reforzar en la marca el valor de la **portabilidad absoluta (Markdown libre y exportación Obsidian)** y la privacidad de datos personales bajo la Ley N° 29733 (Google entrena modelos con datos escolares en sus versiones estándar, lo cual genera recelo en universidades peruanas).
-    2.  **Calibración Técnica (S1.1):** Integrar de forma prioritaria el algoritmo **FSRS local (offline)**. NotebookLM no cuenta con motores de repetición espaciada científica ni planificación personalizada del tiempo de estudio; YachaqAI se posiciona como el motor dinámico de *retención*, no solo de consulta pasiva.
+    1.  **Diferenciación del Ethos (S5):** Reforzar en la marca el valor de la **portabilidad absoluta (Markdown libre y exportable para su uso personal)** y la privacidad de datos personales bajo la Ley N° 29733 [22] (Google entrena modelos con datos escolares en sus versiones estándar, lo cual genera recelo en universidades peruanas).
+    2.  **Calibración Técnica (S1.1):** Integrar de forma prioritaria el algoritmo **FSRS local (offline)** [12]. NotebookLM no cuenta con motores de repetición espaciada científica ni planificación personalizada del tiempo de estudio; YachaqAI se posiciona como el motor dinámico de *retención*, no solo de consulta pasiva.
 
 #### Disrupción B: SUNEDU prohíbe el uso de IAs generativas en tareas académicas en el Perú
 *   **Análisis del Entorno (S4):** Un cambio regulatorio de esta escala desataría el pánico en las universidades aliadas (B2B), que cancelarían contratos de software para evitar sanciones.
@@ -169,3 +167,5 @@ Para asegurar la adaptabilidad, se pre-diseñan dos planes estratégicos ante di
 | [19] | Zendesk (2024). *Customer Experience Trends Report*. | Tiempos de soporte para la calibración del modelo de Churn. |
 | [20] | Scielo / Revistas académicas (2023). *Deserción estudiantil en universidades latinoamericanas*. | Meta de retención institucional del ~27% de deserción universitaria en primer año en LATAM. |
 | [21] | Ebbinghaus, Hermann (1885). *Memory: A Contribution to Experimental Psychology*. | Curva de olvido (~70% de pérdida en 24h) para el modelo de utilidad pedagógica. |
+| [22] | Congreso de la República (2011). *Ley N° 29733 de Protección de Datos Personales de la República del Perú*. Diario Oficial El Peruano. | Marco regulatorio de la protección y privacidad de datos personales en el Perú. |
+| [23] | SUNEDU (2015). *Ley Universitaria N° 30220*. Diario Oficial El Peruano. | Marco legal regulatorio de las universidades del Perú y sus condiciones básicas de calidad. |

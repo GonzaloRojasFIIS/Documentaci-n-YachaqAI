@@ -53,7 +53,7 @@ La frontera del sistema determina qué está dentro (bajo el control de Synapta)
 | Código fuente propietario de YachaqAI | PDFs y documentos del usuario (propiedad intelectual del cliente) |
 | Algoritmos de sincronización BD ↔ Markdown | APIs de LLMs externos (Google Gemini, OpenAI) |
 | Estrategia de marca, precios y canales de venta | Plataformas LMS de universidades (Moodle, Canvas) |
-| Base de datos de estado SRS de los usuarios | Repositorios PKM externos (Obsidian, Notion) |
+| Base de datos de estado SRS de los usuarios | Repositorios PKM externos (Notion u otros gestores de notas Markdown locales) |
 | Equipo de ingeniería, ventas y soporte | Reguladores (SUNEDU, INDECOPI, SUNAT) |
 
 ---
@@ -89,7 +89,7 @@ El entorno de Synapta es altamente complejo. El Cap. 2 exige analizar al menos 1
 | **Política** | CEO + Asesor Legal | Gobiernos como Brasil invierten USD $5,000M en digitalización escolar *(IMARC Group, 2025)* [1]. | Políticas nacionales de soberanía de IA en sectores educativos. |
 | **Legislativa** | Asesor Legal | Ley N° 29733 de Protección de Datos Personales (Perú). | Regulaciones de uso ético de IA en educación superior y directivas específicas de la Autoridad Nacional de Protección de Datos Personales (APDP) de Perú. |
 | **Institucional** | Head of Sales | Las **105 universidades licenciadas** en Perú *(SUNEDU, 2026)* [3] operan bajo sistemas LMS tradicionales (Moodle, Canvas). | Centralización de métricas de retención estudiantil exigidas por SUNEDU como indicador de calidad. |
-| **Mercados** | Head of Growth | Herramientas desarticuladas: Anki (SRS), Obsidian (PKM), PDF.ai (lectura IA). No existe un producto integrado en el mercado peruano. | Consolidación de plataformas "Estudio Inteligente Todo en Uno" con licenciamiento institucional. |
+| **Mercados** | Head of Growth | Herramientas desarticuladas: Anki (SRS), gestores de conocimiento personal (PKM) locales, PDF.ai (lectura IA). No existe un producto integrado en el mercado peruano. | Consolidación de plataformas "Estudio Inteligente Todo en Uno" con licenciamiento institucional. |
 | **Proveedores** | CTO + Head of Infrastructure | Costos de APIs cloud (Google Gemini 1.5 Flash, GPT-4o-mini) competitivos en precio por millón de tokens. | Emergencia de SLMs locales (Llama-3, Phi-3) ejecutables en dispositivos del usuario. |
 | **Competidores** | Head of Growth + CTO | Anki (curva de aprendizaje alta), Notion AI (sin SRS), RemNote (nicho anglosajón). | Asistentes cognitivos nativos en navegadores y sistemas operativos (Microsoft Copilot, Google NotebookLM). |
 | **Tecnológica** | CTO | Madurez en embeddings semánticos (`text-embedding-004`) y parsers estructurados (LlamaParse). | Agentes autónomos multi-paso y grafos vectoriales en memoria con auto-actualización. |
@@ -156,8 +156,8 @@ Es un canal de información de emergencia que **discurre en paralelo a los canal
 
 | Panel en Sala de Operaciones | Sistema Metasistémico | Variables Monitoreadas | Sensor / Origen de Alerta | Gatillo Algedónico Crítico (🔴 Bypass a S5) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Panel 1 – Telemetría de YachaqAI** | **S3** (Presente) | Retentiva promedio de usuarios, tasa de error de LlamaParse y latencia RAG. | Base de datos de producción (telemetría automática) | Tasa de error del parser > 30% sostenida por 1 hora, latencia RAG > 10 segundos por > 30 minutos, o consumo acumulado de cuota de APIs de IA > 85% antes del día 20 del mes. |
-| **Panel 2 – Salud de Mercado** | **S3** (Presente) | CAC vs. Presupuesto, MRR y Churn rate semanal. | CRM de Ventas y Google Analytics | Caída de 50%+ de Usuarios Activos Semanales (WAU) en una sola semana. |
+| **Panel 1 – Telemetría de YachaqAI** | **S3** (Presente) | Retentiva promedio de usuarios, tasa de error de LlamaParse y latencia RAG. | Base de datos de producción (telemetría automática) | Tasa de error del parser > 30% sostenida por 1 hora, latencia RAG > 10 segundos por > 30 minutos *(Google SRE Book [7])*, o consumo acumulado de cuota de APIs de IA > 85% antes del día 20 del mes *(Y Combinator [8])*. |
+| **Panel 2 – Salud de Mercado** | **S3** (Presente) | CAC vs. Presupuesto, MRR y Churn rate semanal. | CRM de Ventas y Google Analytics | Caída de 50%+ de Usuarios Activos Semanales (WAU) en una sola semana *(Y Combinator [8])*. |
 | **Panel 3 – Entorno Futuro** | **S4** (Futuro) | Modelos de Simulación de Entorno (M2, M5), papers arXiv y movimientos de competidores. | Google Alerts, feeds arXiv e insumos del CTO/Sales | *No genera alertas algedónicas operativas* (alimenta el plan estratégico y el Homeostato S4-S3). |
 
 ### 5.3 Diagnóstico y Prevención de Patologías en la Fase 1
@@ -178,3 +178,5 @@ Es un canal de información de emergencia que **discurre en paralelo a los canal
 | [4] | SUNEDU – Sistema de Información Universitaria (2023/2024) | ~1.2 millones de estudiantes matriculados en universidades peruanas licenciadas |
 | [5] | Banco Mundial (2021). *Educación superior en América Latina y el Caribe* | >30 millones de estudiantes en educación superior en LATAM |
 | [6] | Ebbinghaus, Hermann (1885). *Memory: A Contribution to Experimental Psychology* | Pérdida de aproximadamente el 70% de información nueva sin repaso activo dentro de las primeras 24 horas (Curva del Olvido) |
+| [7] | Beyer, B., Jones, C., Petoff, J., & Murphy, K. (2016). *Site Reliability Engineering: How Google Runs Production Systems*. O'Reilly Media. | Prácticas para metas de disponibilidad, latencia y tasas de error. |
+| [8] | Y Combinator (2020). *Startup Playbook & MVP Validation Cycles*. | Ciclo estándar de validación y control presupuestario de startups pre-semilla. |

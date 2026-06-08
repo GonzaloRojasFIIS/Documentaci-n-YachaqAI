@@ -50,7 +50,7 @@ Synapta opera en un mercado híbrido (B2C y B2B) en el sector EdTech de Perú y 
 *   **Propuesta de Valor B2C (YachaqAI para Estudiantes):**
     *   *Estudio Automatizado:* Elimina el esfuerzo de crear tarjetas de repaso (flashcards) o resúmenes manuales; la IA procesa diapositivas y PDFs de clase para convertirlos en grafos interactivos de Markdown estructurado de manera instantánea.
     *   *Retención Óptima Sostenible:* Aplicación científica del algoritmo FSRS (Free Spaced Repetition Scheduler) para programar repasos personalizados en el momento exacto antes de olvidar, garantizando una retención a largo plazo.
-    *   *Privacidad y Portabilidad:* Respeto absoluto a los datos del alumno. La información se puede exportar limpiamente a repositorios Markdown portables (como Obsidian), sin retención cautiva de información (Anti-Vendor Lock-in).
+    *   *Privacidad y Portabilidad:* Respeto absoluto a los datos del alumno. La información se puede exportar limpiamente a repositorios Markdown portables (compatibles con editores de texto plano locales), sin retención cautiva de información (Anti-Vendor Lock-in).
 *   **Propuesta de Valor B2B (YachaqAI Institucional):**
     *   *Monitoreo de Retención Colectiva:* Provee a las autoridades académicas datos agregados (anonimizados) sobre los conceptos y temas que más dificultad causan a los estudiantes en las evaluaciones semanales.
     *   *Prevención Temprana de la Deserción:* Indicadores analíticos en tiempo real que permiten a los tutores intervenir antes de que el estudiante repruebe las asignaturas troncales.
@@ -68,7 +68,7 @@ Synapta opera en un mercado híbrido (B2C y B2B) en el sector EdTech de Perú y 
 ### 2.5 Flujos de Ingresos (Revenue Streams)
 *   **Suscripción Mensual/Anual B2C (SaaS):**
     *   *Tier Gratuito:* Permite cargar hasta 3 documentos al mes y realizar 50 consultas de IA (RAG).
-    *   *Tier Premium (S/. 15 - S/. 25 mensuales):* Consultas ilimitadas de IA, almacenamiento extendido de apuntes en la nube y sincronización avanzada en tiempo real con Obsidian.
+    *   *Tier Premium (S/. 15 - S/. 25 mensuales):* Consultas ilimitadas de IA, almacenamiento extendido de apuntes en la nube y sincronización avanzada en tiempo real con gestores de conocimiento locales.
 *   **Licenciamiento SaaS B2B (Institucional):**
     *   Suscripción anual cobrada por volumen de estudiantes matriculados en la facultad. Incluye la integración con el LMS de la universidad (Canvas/Moodle) y acceso al panel analítico de retención para docentes.
 
