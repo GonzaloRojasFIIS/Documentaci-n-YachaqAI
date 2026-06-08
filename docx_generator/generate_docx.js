@@ -409,17 +409,66 @@ const doc = new Document({
 
       new Paragraph({ heading: HeadingLevel.HEADING_2, children: [new TextRun({ text: '4. Dise\u00F1o del sistema de inteligencia estrat\u00E9gica', font: 'Arial', size: 28, bold: true, color: '2E75B6' })] }),
 
-      para([norm('El sistema de inteligencia estrat\u00E9gica es el encargado de consolidar la informaci\u00F3n de los radares y procesarla dentro de un entorno de decisi\u00F3n interactivo: la '), bold('Sala de Operaciones Virtual'), norm(' [17].')]),
+      para([
+        norm('El sistema de inteligencia estrat\u00E9gica es el encargado de consolidar la informaci\u00F3n de los radares y procesarla dentro de un entorno de decisi\u00F3n interactivo: la '),
+        bold('Sala de Operaciones Virtual (Operations Room)'),
+        norm(' [17].')
+      ]),
 
       new Paragraph({ heading: HeadingLevel.HEADING_3, children: [new TextRun({ text: '4.1 La Sala de Operaciones (Operations Room) y sus 5 Pantallas', font: 'Arial', size: 26, bold: true, color: '1A5276' })] }),
 
-      para([norm('Siguiendo las directrices de Jos\u00E9 P\u00E9rez R\u00EDos [2], la Sala de Operaciones Virtual se organiza en '), bold('5 pantallas espec\u00EDficas'), norm(' para estructurar y simplificar la informaci\u00F3n reduciendo la sobrecarga cognitiva:')]),
+      new Paragraph({ heading: HeadingLevel.HEADING_4, children: [new TextRun({ text: 'Justificaci\u00F3n y Dise\u00F1o Te\u00F3rico de la Sala de Operaciones', font: 'Arial', size: 24, bold: true, color: '1B4F72' })] }),
 
-      numbered([bold('Pantalla 1 \u2014 El Presente (S3):'), norm(' Visualiza las variables cr\u00EDticas del \u201Caqu\u00ED y ahora\u201D de la operaci\u00F3n (Uptime de base de datos Supabase, latencia RAG actual, tickets de soporte activos, cuota de APIs consumida).')]),
-      numbered([bold('Pantalla 2 \u2014 El Pasado (S3):'), norm(' Gr\u00E1ficos de evoluci\u00F3n hist\u00F3rica que muestran trayectorias y tendencias de los meses previos (crecimiento de usuarios activos semanales \u2014 WAU, hist\u00F3rico de costo de APIs, evoluci\u00F3n del Churn rate y retenci\u00F3n D7 hist\u00F3rica).')]),
-      numbered([bold('Pantalla 3 \u2014 El Futuro y Simulaci\u00F3n (S4):'), norm(' Pantalla interactiva que aloja los simuladores de los Modelos '), bold('M2'), norm(' (P\u00E9rdida de Pilotos) y '), bold('M5'), norm(' (Penetraci\u00F3n EdTech y Regulaciones SUNEDU) bajo la metodolog\u00EDa de Din\u00E1mica de Sistemas. Permite correr escenarios \u201Cqu\u00E9 pasar\u00EDa si\u201D (What-if) modificando variables de entrada en tiempo real.')]),
-      numbered([bold('Pantalla 4 \u2014 El Modelo Cibert\u00E9nico:'), norm(' Representaci\u00F3n gr\u00E1fica e interactiva de la estructura del Modelo de Sistema Viable (MSV) de Synapta. Mapea las relaciones homeost\u00E1ticas entre los Sistemas 1 a 5 e identifica visualmente qu\u00E9 canales presentan fallas de transducci\u00F3n o patolog\u00EDas de filtrado.')]),
-      numbered([bold('Pantalla 5 \u2014 Informaci\u00F3n Complementaria:'), norm(' Acceso a feeds de arXiv, matriz actualizada de competidores directos, base de conocimientos legal (SUNEDU/APDP), reportes de retroalimentaci\u00F3n de usuarios en Discord y grabaciones de demos de ventas B2B.')]),
+      para([
+        norm('Desde la perspectiva de la cibern\u00E9tica organizacional y siguiendo las directrices de Jos\u00E9 P\u00E9rez R\u00EDos [2] y Stafford Beer [1], la '),
+        bold('Sala de Operaciones Virtual'),
+        norm(' no es un simple tablero de control visual; es un espacio cibern\u00E9tico estructurado para asistir al '),
+        bold('Metasistema (Sistemas 3, 4 y 5)'),
+        norm('. Su prop\u00F3sito fundamental es '),
+        bold('atenuar y estructurar la variedad de datos brutos'),
+        norm(', convirti\u00E9ndola en informaci\u00F3n inteligible sobre tres horizontes temporales (pasado, presente y futuro) para orientar el equilibrio adaptativo de la organizaci\u00F3n [2], [4].')
+      ]),
+
+      para([
+        norm('Este dise\u00F1o aborda directamente la '),
+        bold('Ley de Miller'),
+        norm(' sobre los l\u00EDmites del procesamiento de la atenci\u00F3n humana (7 \u00B1 2 fragmentos cognitivos concurrentes) [10]. Al filtrar la complejidad del entorno a trav\u00E9s de sensores espec\u00EDficos y transductores automatizados, la Sala de Operaciones evita que el Sistema 3 (Gesti\u00F3n Operativa) colapse bajo la patolog\u00EDa de la '),
+        bold('Hipertrofia del S3'),
+        norm(' (microgesti\u00F3n desestructurada) [5]. Asimismo, act\u00FAa como el soporte f\u00EDsico e inform\u00E1tico del '),
+        bold('Homeostato S3-S4'),
+        norm(', regulando la tensi\u00F3n natural entre la estabilidad de la operaci\u00F3n (\u201Caqu\u00ED y ahora\u201D) y la necesidad de cambio para la adaptaci\u00F3n (\u201Cafuera y ma\u00F1ana\u201D) [2], [7].')
+      ]),
+
+      para([
+        norm('De acuerdo con el marco del MSV, la Sala de Operaciones Virtual se organiza estrictamente en '),
+        bold('5 pantallas interactivas'),
+        norm(' especializadas:')
+      ]),
+
+      numbered([
+        bold('Pantalla 1 \u2014 El Presente (Desempe\u00F1o Operativo y Sem\u00E1foros de S3): '),
+        norm('Regula la viabilidad del d\u00EDa a d\u00EDa mediante el principio de "gesti\u00F3n por excepci\u00F3n". Utiliza un sistema visual de sem\u00E1foros tricolores (verde, amarillo, rojo) [2], [18]. Muestra variables del Sistema 2 como el Uptime de servicios (UptimeRobot) [17], tasa de excepciones (Sentry) [17], consumo en tiempo real de APIs [13], [14] y WAU / retenci\u00F3n D7 de PostHog/Google Analytics [11].')
+      ]),
+
+      numbered([
+        bold('Pantalla 2 \u2014 El Pasado (Tendencias y Auditor\u00EDa de S3*): '),
+        norm('Provee el contexto hist\u00F3rico del comportamiento del sistema para identificar patrones recurrentes, ciclos de estacionalidad acad\u00E9mica y deudas t\u00E9cnicas acumuladas [2], [10]. Despliega curvas de WAU, Costo de APIs, Churn y el historial de auditor\u00EDas del canal S3* [2], [16].')
+      ]),
+
+      numbered([
+        bold('Pantalla 3 \u2014 El Futuro y Simulaci\u00F3n (Prospectiva de S4): '),
+        norm('Es el motor del Sistema 4. Permite simular el impacto de decisiones alternativas frente a variaciones din\u00E1micas del entorno (\u201CWhat-if\u201D) mediante Din\u00E1mica de Sistemas (Vensim, Ithink o Google Sheets) [2], [8]. Aloja el Modelo M1 (costo y escala) [13], [14], Modelo M2 (p\u00E9rdida de pilotos B2B) [8], Modelo M3 (disponibilidad) [9] y el Modelo M5 (regulaciones SUNEDU a 5 a\u00F1os) [3], [24].')
+      ]),
+
+      numbered([
+        bold('Pantalla 4 \u2014 El Modelo Cibert\u00E9nico (VSMod\u00AE): '),
+        norm('Provee una representaci\u00F3n topol\u00F3gica e interactiva de la estructura de la organizaci\u00F3n en todos sus niveles de recursi\u00F3n (Ingenier\u00EDa, Growth, Ventas y Soporte), visualizando el estado de los canales de comunicaci\u00F3n, transducci\u00F3n y patolog\u00EDas en los homeostatos [2], [5].')
+      ]),
+
+      numbered([
+        bold('Pantalla 5 \u2014 Informaci\u00F3n Complementaria (Vigilancia del Entorno): '),
+        norm('Filtra la variedad del entorno externo mediante feeds de arXiv (NLP/RAG) [13], alertas de SUNEDU/APDP (Ley N\u00B0 29733) [22], [23], matrices cualitativas de competidores (Anki, RemNote, Notion AI) [25] e hilos de retroalimentaci\u00F3n de Discord.')
+      ]),
 
       spacer(),
       new Paragraph({ heading: HeadingLevel.HEADING_3, children: [new TextRun({ text: '4.2 El Bucle de Escalamiento Alged\u00F3nico del S4', font: 'Arial', size: 26, bold: true, color: '1A5276' })] }),

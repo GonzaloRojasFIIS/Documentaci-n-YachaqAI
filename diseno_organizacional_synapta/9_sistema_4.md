@@ -126,16 +126,49 @@ YachaqAI se diferencia por una propuesta de valor estructurada para resolver el 
 ## Parte 2: Modelado y Proyección Sistemática
 
 ### 4. Diseño del sistema de inteligencia estratégica
-El sistema de inteligencia estratégica es el encargado de consolidar la información de los radares y procesarla dentro de un entorno de decisión interactivo: la **Sala de Operaciones Virtual** [17].
+El sistema de inteligencia estratégica es el encargado de consolidar la información de los radares y procesarla dentro de un entorno de decisión interactivo: la **Sala de Operaciones Virtual (Operations Room)** [17].
 
 #### 4.1 La Sala de Operaciones (Operations Room) y sus 5 Pantallas
-Siguiendo las directrices del libro de José Pérez Ríos [2], la Sala de Operaciones Virtual se organiza en **5 pantallas específicas** para estructurar y simplificar la información reduciendo la sobrecarga cognitiva:
+##### Justificación y Diseño Teórico de la Sala de Operaciones
+Desde la perspectiva de la cibernética organizacional y siguiendo las directrices de José Pérez Ríos [2] y Stafford Beer [1], la **Sala de Operaciones Virtual** no es un simple tablero de control visual; es un espacio cibernético estructurado para asistir al **Metasistema (Sistemas 3, 4 y 5)**. Su propósito fundamental es **atenuar y estructurar la variedad de datos brutos**, convirtiéndola en información inteligible sobre tres horizontes temporales (pasado, presente y futuro) para orientar el equilibrio adaptativo de la organización [2], [4].
 
-1.  **Pantalla 1 — El Presente (S3):** Visualiza las variables críticas del "aquí y ahora" de la operación (Uptime de base de datos Supabase, latencia RAG actual, tickets de soporte activos, cuota de APIs consumida).
-2.  **Pantalla 2 — El Pasado (S3):** Gráficos de evolución histórica que muestran trayectorias y tendencias de los meses previos (crecimiento de usuarios activos semanales - WAU, histórico de costo de APIs, evolución del Churn rate y retención D7 histórica).
-3.  **Pantalla 3 — El Futuro y Simulación (S4):** Pantalla interactiva que aloja los simuladores de los Modelos **M2** (Pérdida de Pilotos) y **M5** (Penetración EdTech y Regulaciones SUNEDU) bajo la metodología de Dinámica de Sistemas (System Dynamics). Permite correr escenarios "qué pasaría si" (What-if) modificando variables de entrada en tiempo real.
-4.  **Pantalla 4 — El Modelo Cibernético:** Representación gráfica e interactiva de la estructura del Modelo de Sistema Viable (MSV) de Synapta (generado con el software VSMod® [15]). Mapea las relaciones homeostáticas entre los Sistemas 1 a 5 y los niveles de recursión, identificando de manera visual qué canales presentan fallas de transducción o patologías de filtrado.
-5.  **Pantalla 5 — Información Complementaria:** Acceso a feeds de arXiv, matriz actualizada de competidores directos, base de conocimientos legal (SUNEDU/APDP), reportes de retroalimentación de usuarios en Discord y grabaciones de demos de ventas B2B.
+Este diseño aborda directamente la **Ley de Miller** sobre los límites del procesamiento de la atención humana ($7 \pm 2$ fragmentos cognitivos concurrentes) [10]. Al filtrar la complejidad del entorno a través de sensores específicos y transductores automatizados, la Sala de Operaciones evita que el Sistema 3 (Gestión Operativa) colapse bajo la patología de la **Hipertrofia del S3** (microgestión desestructurada) [5]. Asimismo, actúa como el soporte físico e informático del **Homeostato S3-S4**, regulando la tensión natural entre la estabilidad de la operación ("aquí y ahora") y la necesidad de cambio para la adaptación ("afuera y mañana") [2], [7].
+
+De acuerdo con el marco del VSM, la Sala de Operaciones Virtual se organiza estrictamente en **5 pantallas interactivas** especializadas:
+
+1.  **Pantalla 1 — El Presente (Desempeño Operativo y Semáforos de S3):**
+    *   **Propósito Cibernético:** Regula la viabilidad del día a día mediante el principio de **"gestión por excepción"**. Utiliza un sistema visual de semáforos tricolores (🟢 Verde = Operación normal, no interviene S3; 🟡 Amarillo = Advertencia de desviación menor; 🔴 Rojo = Alerta Algedónica crítica que salta directamente a S5) [2], [18].
+    *   **Variables y Herramientas Visualizadas:**
+        *   *Uptime de servicios cloud y bases de datos:* Telemetría de disponibilidad en producción (ej. Next.js/Supabase monitoreados vía UptimeRobot) [17].
+        *   *Estabilidad técnica de la aplicación:* Tasa de excepciones y errores 5xx (monitoreados vía Sentry) [17].
+        *   *Presupuesto de consumo en tiempo real:* API Burn Rate de APIs externas de IA y LlamaParse frente a la asignación de la SAS mensual [13], [14].
+        *   *Métricas de tracción inmediata:* Usuarios Activos Semanales (WAU) e indicadores de retención estudiantil a 7 días (D7) consumidos automáticamente de PostHog/Google Analytics [11].
+2.  **Pantalla 2 — El Pasado (Tendencias y Auditoría de S3*):**
+    *   **Propósito Cibernético:** Provee el contexto histórico del comportamiento del sistema para identificar patrones recurrentes, ciclos de estacionalidad académica y deudas técnicas acumuladas [2], [10].
+    *   **Variables y Herramientas Visualizadas:**
+        *   *Gráficos de evolución histórica:* Curvas mensuales de WAU, Costo de APIs acumulado, tasa de Churn y evolución del MRR [11].
+        *   *Panel del canal de control S3* (Auditoría cruzada):* Historial de resultados de auditorías de código, cumplimiento de directrices técnicas de sprints anteriores e indicadores acumulados del clima del equipo fundador [2], [16].
+3.  **Pantalla 3 — El Futuro y Simulación (Prospectiva de S4):**
+    *   **Propósito Cibernético:** Es el núcleo del Sistema 4. Permite evaluar y simular el impacto de decisiones estratégicas alternativas frente a variaciones dinámicas del entorno ("What-if"), asegurando que el diálogo S3-S4 se base en modelos lógicos cuantitativos y no en intuiciones subjetivas [2], [7].
+    *   **Variables y Herramientas Visualizadas:**
+        *   *Modelos de Simulación Dinámica:* Desarrollados mediante metodologías de **Dinámica de Sistemas (System Dynamics)** (utilizando herramientas como Vensim, Ithink o simuladores numéricos reactivos en Google Sheets) [2], [8].
+        *   *Modelo M1 (Costos y Escalabilidad):* Proyección del gasto de APIs y base de datos Supabase según el volumen de ingesta de PDFs de estudio de los estudiantes en los próximos 12 meses [13], [14].
+        *   *Modelo M2 (Pérdida de Piloto B2B):* Simulación del impacto en cascada sobre los WAU y el CAC si un docente de una universidad clave abandona el piloto [8].
+        *   *Modelo M3 (Disponibilidad del Equipo):* Proyección de la capacidad de horas disponibles del equipo en el próximo sprint frente a hitos académicos/profesionales de los miembros [9].
+        *   *Modelo M5 (Penetración de Mercado y Regulaciones SUNEDU):* Simulación a 5 años del punto de equilibrio financiero y el SOM frente a cambios de normativas de calidad universitaria de SUNEDU [3], [24].
+4.  **Pantalla 4 — El Modelo Cibernético (VSMod®):**
+    *   **Propósito Cibernético:** Provee una representación topológica e interactiva de la estructura de la organización en todos sus niveles de recursión para realizar diagnósticos rápidos de salud estructural [2].
+    *   **Variables y Herramientas Visualizadas:**
+        *   *Arquitectura MSV interactiva:* Mapeo digital de las relaciones homeostáticas entre los Sistemas 1 a 5 y los niveles de recursión (Ingeniería, Growth, Ventas y Soporte), visualizando el estado de los canales de comunicación y transducción de arriba hacia abajo y de abajo hacia arriba [2].
+        *   *Monitoreo de Patologías:* Detección de fallos en el homeostato S3-S4, desbalances de autonomía en S1, e interrupciones en los bucles de control local de S2 [5].
+5.  **Pantalla 5 — Información Complementaria (Vigilancia del Entorno):**
+    *   **Propósito Cibernético:** Filtra y atenuación de la variedad del entorno externo para mantener alimentado el proceso de inteligencia prospectiva mediante datos cualitativos de entrada [2], [22].
+    *   **Variables y Herramientas Visualizadas:**
+        *   *Radar Tecnológico:* Feeds rss de arXiv (sección cs.CL) para detectar papers clave sobre modelos de lenguaje locales (SLMs), embeddings y arquitecturas RAG [13].
+        *   *Radar Regulatorio:* Alertas del Diario Oficial El Peruano y resoluciones de SUNEDU sobre licenciamiento o de la Autoridad Nacional de Protección de Datos Personales (APDP) sobre el manejo de la Ley N° 29733 [22], [23].
+        *   *Radar de Mercado:* Matriz multidimensional de benchmarking cualitativo y cuantitativo de competidores (Anki, RemNote, Notion AI, Google NotebookLM) [25].
+        *   *Feedback Cualitativo:* Hilos consolidados de retroalimentación de usuarios en Discord y grabaciones de demos comerciales B2B.
+
 
 #### 4.2 El Bucle de Escalamiento Algedónico del S4
 Si un sensor de S4 detecta una disrupción crítica en el entorno que amenaza la viabilidad general de la empresa (ej. una filtración del competidor que invalida nuestra ventaja técnica o un cambio de ley retroactivo de SUNEDU que prohíbe exámenes virtuales), el S4 **puentea al S3** y gatilla una **Alerta Algedónica Estratégica** directa a la Junta de Fundadores (S5) utilizando el canal algedónico de comunicación de emergencia, convocando a una sesión de rediseño de identidad organizacional de manera inmediata [1], [18].
