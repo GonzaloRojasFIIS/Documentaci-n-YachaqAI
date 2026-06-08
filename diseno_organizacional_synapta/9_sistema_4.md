@@ -63,21 +63,21 @@ Para vigilar el entorno EdTech en el Perú y LATAM, el S4 de Synapta implementa 
 
 ```mermaid
 graph TD
-    subgraph "Entorno Externo (Alta Variedad)"
+    subgraph EE ["Entorno Externo (Alta Variedad)"]
         T["Tecnología (Gemini APIs, arXiv, RAG)"]
         R["Regulación (SUNEDU, Ley 29733 Datos Personales)"]
         M["Mercado (Competidores, Churn, CAC EdTech)"]
     end
 
-    subgraph "S4: Sensores y Transductores"
+    subgraph S4_Sens ["S4: Sensores y Transductores"]
         ST["Sensor Técnico: CTO"]
         SR["Sensor Regulatorio: Sales/Legal"]
         SM["Sensor de Mercado: Head of Growth"]
     end
 
-    T -->|Lazo Entorno Presente (Diario)| ST
-    R -->|Lazo Entorno Futuro (Semanal)| SR
-    M -->|Lazo Entorno Futuro (Semanal)| SM
+    T -->|"Lazo Entorno Presente (Diario)"| ST
+    R -->|"Lazo Entorno Futuro (Semanal)"| SR
+    M -->|"Lazo Entorno Futuro (Semanal)"| SM
 
     ST -->|Transducción| M2["Modelos RAG & Cuotas"]
     SR -->|Transducción| M5["Modelo M5 (Cumplimiento)"]
